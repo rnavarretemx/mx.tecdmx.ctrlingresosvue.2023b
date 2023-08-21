@@ -1,27 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+
+    <FormRegistro></FormRegistro>
+    <!-- <DescargarQR></DescargarQR> -->
+    <!-- <DatosRegistro></DatosRegistro> -->
+    <!-- <RegistroCitas></RegistroCitas> -->
+    
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script lang="ts" setup>
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+import FormRegistro from './components/views/FormRegistro.vue';
+import DescargarQR from './components/views/DescargaQR.vue';
+import DatosRegistro from './components/views/DatosRegistro.vue';
+import RegistroCitas from './components/views/RegistroCitas.vue';
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
