@@ -31,6 +31,7 @@
       </b-col>
 
       <b-col sm="0" md="8" lg="9">
+
         <!-- <b-navbar-toggle target="navbar-toggle-collapse" >
           <template #default="{ expanded }">
             <b-icon v-if="expanded" icon="chevron-bar-up" style="color:#fff; font-size:28px;"></b-icon>
@@ -47,7 +48,6 @@
         </b-collapse> -->
       </b-col>
     </b-row>
-
   </b-navbar>
 </template>
   
