@@ -19,6 +19,7 @@ import input_text from "../components/input_text"
 import input_select from "../components/input_select"
 import input_datepicker from "../components/input_datepicker"
 import input_timepicker from "../components/input_timepicker"
+import button_primary from "../components/button_primary"
 
 const form_registro = require('../json/form_registro.json');
 
@@ -41,7 +42,8 @@ export default {
         input_text,
         input_select,
         input_datepicker,
-        input_timepicker
+        input_timepicker,
+        button_primary
     }
 };
 </script>
