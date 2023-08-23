@@ -23,7 +23,7 @@
 
       <b-col sm="12" md="4" lg="3">
         <b-navbar-brand>
-          <img class="img_tecdmx" src="../../assets/tribunal_logo.png" alt="">
+          <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
           <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
               class="bi bi-three-dots"></i></button> -->

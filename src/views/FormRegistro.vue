@@ -13,10 +13,10 @@
 
 
 <script lang="ts">
-import input_text from "../input_text"
-import input_select from "../input_select"
-import input_datepicker from "../input_datepicker"
-import input_timepicker from "../input_timepicker"
+import input_text from "../components/input_text"
+import input_select from "../components/input_select"
+import input_datepicker from "../components/input_datepicker"
+import input_timepicker from "../components/input_timepicker"
 
 const form_registro = require('../json/form_registro.json');
 

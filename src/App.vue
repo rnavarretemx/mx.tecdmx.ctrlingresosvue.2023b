@@ -5,17 +5,16 @@
     <!-- <DescargarQR></DescargarQR> -->
     <!-- <DatosRegistro></DatosRegistro> -->
     <!-- <RegistroCitas></RegistroCitas> -->
-    
 </template>
 
 <script lang="ts" setup>
 
-import FormRegistro from './components/views/FormRegistro.vue';
-import DescargarQR from './components/views/DescargaQR.vue';
-import DatosRegistro from './components/views/DatosRegistro.vue';
-import RegistroCitas from './components/views/RegistroCitas.vue';
-import Header from './components/layout/Header.vue';
-import Sidebar from './components/layout/Sidebar.vue';
+import FormRegistro from './views/FormRegistro.vue';
+import DescargarQR from './views/DescargaQR.vue';
+import DatosRegistro from './views/DatosRegistro.vue';
+import RegistroCitas from './views/RegistroCitas.vue';
+import Header from './layout/Header.vue';
+import Sidebar from './layout/Sidebar.vue';
 </script>
 
 <style></style>
