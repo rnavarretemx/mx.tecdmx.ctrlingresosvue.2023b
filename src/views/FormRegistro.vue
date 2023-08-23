@@ -13,6 +13,8 @@
 
 
 <script lang="ts">
+import title from "../components/title"
+import subtitle from "../components/subtitle"
 import input_text from "../components/input_text"
 import input_select from "../components/input_select"
 import input_datepicker from "../components/input_datepicker"
@@ -34,6 +36,8 @@ export default {
     },
     name: "form_registro",
     components: {
+        title,
+        subtitle,
         input_text,
         input_select,
         input_datepicker,
@@ -43,14 +47,14 @@ export default {
 </script>
     
 <style scoped>
-.row {
+/* .row {
     border: solid 1px red;
 }
 
 .col {
     border: solid 5px blue;
 }
-
+ */
 .titulo_uno {
     padding-top: 2em;
     padding-bottom: 1em;

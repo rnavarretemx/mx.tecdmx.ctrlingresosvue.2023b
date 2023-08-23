@@ -18,4 +18,14 @@ export default {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+div{
+    margin-bottom: 10px;
+    /* border: solid 1px blue; */
+}
+div label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+</style>

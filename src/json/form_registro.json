@@ -1,6 +1,22 @@
 {
     "body": [
         {
+            "id": "txt_title",
+            "component": "title",
+            "label": "Registro de ingreso",
+            "sm": "12",
+            "md": "12",
+            "lg": "12"
+        },
+        {
+            "id": "txt_subtitle1",
+            "component": "subtitle",
+            "label": "Datos de la visita",
+            "sm": "12",
+            "md": "12",
+            "lg": "12"
+        },
+        {
             "id": "txt_nombre",
             "component": "input_text",
             "label": "Nombre",
@@ -26,6 +42,14 @@
             "sm": "12",
             "md": "12",
             "lg": "4"
+        },
+        {
+            "id": "txt_subtitle2",
+            "component": "subtitle",
+            "label": "Motivo de la visita",
+            "sm": "12",
+            "md": "12",
+            "lg": "12"
         },
         {
             "id": "txt_procedencia",
@@ -55,6 +79,14 @@
             "lg": "4"
         },
         {
+            "id": "txt_subtitle3",
+            "component": "subtitle",
+            "label": "Datos del personal que recibe la visita",
+            "sm": "12",
+            "md": "12",
+            "lg": "12"
+        },
+        {
             "id": "txt_personal",
             "component": "input_select",
             "label": "¿A quién visita?",
@@ -67,7 +99,7 @@
             "id": "txt_areapiso",
             "component": "input_text",
             "label": "Área o piso",
-            "placeholder": "1 - 8",
+            "placeholder": "4N - Unidad de Servicios Informáticos",
             "sm": "12",
             "md": "6",
             "lg": "4"
