@@ -1,0 +1,101 @@
+{
+    "body": [
+        {
+            "id": "txt_nombre",
+            "component": "input_text",
+            "label": "Nombre",
+            "placeholder": "Jhon",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_paterno",
+            "component": "input_text",
+            "label": "Apellido Paterno",
+            "placeholder": "Doe",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_materno",
+            "component": "input_text",
+            "label": "Apellido Materno",
+            "placeholder": "Opcional",
+            "sm": "12",
+            "md": "12",
+            "lg": "4"
+        },
+        {
+            "id": "txt_procedencia",
+            "component": "input_text",
+            "label": "Procedencia",
+            "placeholder": "Organización o Instituto",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_asunto",
+            "component": "input_text",
+            "label": "Asunto",
+            "placeholder": "-",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_contacto",
+            "component": "input_text",
+            "label": "Contacto",
+            "placeholder": "5526548974",
+            "sm": "12",
+            "md": "12",
+            "lg": "4"
+        },
+        {
+            "id": "txt_personal",
+            "component": "input_select",
+            "label": "¿A quién visita?",
+            "options": [],
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_areapiso",
+            "component": "input_text",
+            "label": "Área o piso",
+            "placeholder": "1 - 8",
+            "sm": "12",
+            "md": "6",
+            "lg": "4"
+        },
+        {
+            "id": "txt_extension",
+            "component": "input_text",
+            "label": "Extensión",
+            "placeholder": "1172",
+            "sm": "12",
+            "md": "12",
+            "lg": "4"
+        },
+        {
+            "id": "txt_fecha",
+            "component": "input_datepicker",
+            "label": "Fecha disponible",
+            "sm": "12",
+            "md": "6",
+            "lg": "6"
+        },
+        {
+            "id": "txt_hora",
+            "component": "input_timepicker",
+            "label": "Horas disponibles",
+            "sm": "12",
+            "md": "6",
+            "lg": "6"
+        }
+    ]
+}

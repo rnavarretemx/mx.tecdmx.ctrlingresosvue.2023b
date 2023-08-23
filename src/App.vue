@@ -1,6 +1,6 @@
 <template>
-    <!-- <Header></Header>
-    <Sidebar></Sidebar> -->
+    <Header></Header>
+    <Sidebar></Sidebar>
     <FormRegistro></FormRegistro>
     <!-- <DescargarQR></DescargarQR> -->
     <!-- <DatosRegistro></DatosRegistro> -->
