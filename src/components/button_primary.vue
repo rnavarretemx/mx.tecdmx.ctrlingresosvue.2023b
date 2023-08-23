@@ -22,4 +22,10 @@ export default {
     text-align: center;
     margin-bottom: 10px;
 }
+
+.button_primary button{
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
 </style>

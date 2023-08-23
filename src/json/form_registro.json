@@ -132,7 +132,7 @@
         {
             "id": "btn_guardar",
             "component": "button_primary",
-            "label": "Guardar",
+            "label": "GUARDAR",
             "sm": "12",
             "md": "12",
             "lg": "12"
