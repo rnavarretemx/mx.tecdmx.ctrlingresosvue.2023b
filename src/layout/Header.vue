@@ -2,21 +2,39 @@
   <b-navbar toggleable type="dark" variant="info">
     <b-row class="w-100">
 
-      <b-col sm="12" md="4" lg="3">
-        <b-navbar-brand>
-          <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
-        </b-navbar-brand>
-      </b-col>
+      <div class="navbar_header">
+        <b-col sm="12" md="4" lg="3" class="col-div">
+          <b-navbar-brand>
+            <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
+          </b-navbar-brand>
+        </b-col>
 
-      <b-col sm="0" md="8" lg="9">
-      </b-col>
+        <b-col sm="0" md="8" lg="9" class="col-div">
+          <template v-for="json_data in comp_navbar.body">
+            <component :is="json_data.component" :block="json_data"></component>
+          </template>
+        </b-col>
+      </div>
+
     </b-row>
   </b-navbar>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
+import title from "../components/title.vue"
+const comp_navbar = require('../json/navbar_header.json');
 
-
+export default {
+  data() {
+        return {
+          comp_navbar
+        };
+    },
+  name: "navbar_header",
+  components:{
+    title
+  }
+};
 </script>
   
 <style scoped>
@@ -25,6 +43,10 @@
   padding: 0;
 }
 
+.col-div{
+  border: solid 1px rgb(0, 255, 255);
+  padding: 0 !important;
+}
 .navbar {
   background: #eceff1 !important;
   padding: 0 !important;
@@ -32,8 +54,8 @@
 
 .row {
   margin: 0;
+  border: solid 2px red;
 }
-
 
 .row div:first-child {
   padding: 10px;
@@ -41,25 +63,11 @@
   text-align: center;
 }
 
+
+
 .navbar-brand img {
   height: 100%;
   width: 135px;
 }
-
-/* 
-.btn {
-  background: #75096C;
-  border: none;
-  display: flex;
-  float: right;
-}
-
-.btn:hover {
-  background: #75096C;
-}
-
-.btn i {
-  font-size: 18px;
-} */
 </style>
   

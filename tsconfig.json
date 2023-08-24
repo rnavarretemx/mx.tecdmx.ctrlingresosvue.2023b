@@ -20,6 +20,24 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@app/*": [
+        "./app/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@json/*": [
+        "./json/*"
+      ],
+      "@layout/*": [
+        "./layout/*"
+      ],
+      "@views/*": [
+        "./views/*"
       ]
     },
     "lib": [

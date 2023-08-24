@@ -2,9 +2,9 @@
     <b-container>
         <b-form>
             <b-row>
-
                 <template v-for="json_data in form_registro.body">
                     <component :is="json_data.component" :block="json_data"></component>
+                    <!-- {{ json_data.sub_body }} -->
                 </template>
             </b-row>
         </b-form>
@@ -13,21 +13,17 @@
 
 
 <script lang="ts">
-import title from "../components/title"
-import subtitle from "../components/subtitle"
-import input_text from "../components/input_text"
-import input_select from "../components/input_select"
-import input_datepicker from "../components/input_datepicker"
-import input_timepicker from "../components/input_timepicker"
-import button_primary from "../components/button_primary"
+
+/* import navbar_header from "../components/header.vue" */
+import title from "../components/title.vue"
+import subtitle from "../components/subtitle.vue"
+import input_text from "../components/input_text.vue"
+import input_select from "../components/input_select.vue"
+import input_datepicker from "../components/input_datepicker.vue"
+import input_timepicker from "../components/input_timepicker.vue"
+import button_primary from "../components/button_primary.vue"
 
 const form_registro = require('../json/form_registro.json');
-
-
-/* let select_options = [
-    { id: "1172", nombre: "Jhon Doe" },
-    { id: "1172", nombre: "Jhon Doe" }
-]; */
 
 export default {
     data() {
@@ -37,6 +33,7 @@ export default {
     },
     name: "form_registro",
     components: {
+        /*  navbar_header, */
         title,
         subtitle,
         input_text,
@@ -49,14 +46,6 @@ export default {
 </script>
     
 <style scoped>
-/* .row {
-    border: solid 1px red;
-}
-
-.col {
-    border: solid 5px blue;
-}
- */
 .titulo_uno {
     padding-top: 2em;
     padding-bottom: 1em;

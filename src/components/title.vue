@@ -11,12 +11,17 @@ export default {
     props: {
         block: Object
     },
-    name: "titile"
+    name: "title"
 };
 
 </script>
 
 <style scoped>
+
+.title{
+    border: solid 1px white;
+    margin: 0;
+}
 div{
     margin-bottom: 10px;
 }

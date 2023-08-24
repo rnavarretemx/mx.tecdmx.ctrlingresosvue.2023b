@@ -1,14 +1,6 @@
 {
     "body": [
         {
-            "id": "txt_title",
-            "component": "title",
-            "label": "Registro de ingreso",
-            "sm": "12",
-            "md": "12",
-            "lg": "12"
-        },
-        {
             "id": "txt_subtitle1",
             "component": "subtitle",
             "label": "Datos de la visita",
@@ -116,7 +108,7 @@
         {
             "id": "txt_fecha",
             "component": "input_datepicker",
-            "label": "Fecha disponible",
+            "label": "Fechas disponible",
             "sm": "12",
             "md": "6",
             "lg": "6"
