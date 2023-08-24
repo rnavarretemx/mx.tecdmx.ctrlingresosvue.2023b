@@ -20,7 +20,7 @@ export default {
 
 .title{
     border: solid 1px white;
-    margin: 0;
+   /*  margin-bottom: 0 !important; */
 }
 div{
     margin-bottom: 10px;

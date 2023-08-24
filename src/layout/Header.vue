@@ -2,7 +2,7 @@
   <b-navbar toggleable type="dark" variant="info">
     <b-row class="w-100">
 
-      <div class="navbar_header">
+      
         <b-col sm="12" md="4" lg="3" class="col-div">
           <b-navbar-brand>
             <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
@@ -13,8 +13,9 @@
           <template v-for="json_data in comp_navbar.body">
             <component :is="json_data.component" :block="json_data"></component>
           </template>
+          &nbsp;
         </b-col>
-      </div>
+        
 
     </b-row>
   </b-navbar>
@@ -43,10 +44,15 @@ export default {
   padding: 0;
 }
 
+.navbar_header{
+  /* display: flex; */
+  border: solid 1px yellow;
+}
 .col-div{
-  border: solid 1px rgb(0, 255, 255);
+  border: solid 2px rgb(0, 255, 255);
   padding: 0 !important;
 }
+
 .navbar {
   background: #eceff1 !important;
   padding: 0 !important;
@@ -54,16 +60,19 @@ export default {
 
 .row {
   margin: 0;
+  /* padding: 0 !important; */
   border: solid 2px red;
 }
 
-.row div:first-child {
+.col-div:first-child {
   padding: 10px;
   background: #75096C;
   text-align: center;
 }
 
-
+.col-div:nth-child(2){
+  padding-bottom:0 !important;
+}
 
 .navbar-brand img {
   height: 100%;
