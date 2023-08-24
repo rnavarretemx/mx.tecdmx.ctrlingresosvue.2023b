@@ -1,6 +1,6 @@
 <template>
-    <Header></Header>
-    <!-- <FormRegistro></FormRegistro> -->
+    
+    <FormRegistro></FormRegistro>
     
     <!-- <Sidebar></Sidebar> -->
     <!-- <DescargarQR></DescargarQR> -->
@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 
-import Header from './layout/Header.vue';
+/* import Header from './layout/Header.vue'; */
 import FormRegistro from './views/FormRegistro.vue';
 /* import DescargarQR from './views/DescargaQR.vue';
 import DatosRegistro from './views/DatosRegistro.vue';

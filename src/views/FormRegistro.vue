@@ -1,4 +1,5 @@
 <template>
+    <Header titulo_navbar="Registro de ingreso"></Header>
     <b-container>
         <b-form>
             <b-row>
@@ -15,6 +16,7 @@
 <script lang="ts">
 
 /* import navbar_header from "../components/header.vue" */
+import Header from '../layout/Header.vue';
 import title from "../components/title.vue"
 import subtitle from "../components/subtitle.vue"
 import input_text from "../components/input_text.vue"
@@ -34,6 +36,7 @@ export default {
     name: "form_registro",
     components: {
         /*  navbar_header, */
+        Header,
         title,
         subtitle,
         input_text,
@@ -46,6 +49,11 @@ export default {
 </script>
     
 <style scoped>
+
+.container{
+padding: 50px;
+}
+
 .titulo_uno {
     padding-top: 2em;
     padding-bottom: 1em;
@@ -54,5 +62,7 @@ export default {
 .titulo_uno h3 {
     font-size: 40px;
 }
+
+
 </style>
     

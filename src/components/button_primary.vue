@@ -20,7 +20,7 @@ export default {
 .button_primary {
     /* border: solid 1px red; */
     text-align: center;
-    margin-bottom: 10px;
+   /*  margin-bottom: 10px; */
 }
 
 .button_primary button{
