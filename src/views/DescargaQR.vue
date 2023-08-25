@@ -14,7 +14,6 @@
             </div>
         </div>
 
-
         <div class="row text-center">
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
                 <h6>Nombre del visitante</h6>
@@ -28,17 +27,22 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center div_botones">
-                <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
                     data-bs-target="#modal_equipo" type="button">¿Necesitas registrar
-                    equipo de c&oacute;mputo?</button>
+                    equipo de c&oacute;mputo?</button> -->
+                    <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">¿Necesitas registrar
+                    equipo de c&oacute;mputo?</b-button>
 
-                <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
                     data-bs-target="#modal_auto" type="button">¿Necesitas registrar
-                    autom&oacute;vil?</button>
+                    autom&oacute;vil?</button> -->
+
+                    <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">¿Necesitas registrar
+                        autom&oacute;vil?</b-button>
 
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                <button class="btn btn-outline-danger btn-lg col-lg-4" type="button">DESCARGAR QR</button>
+                <button class="btn btn-outline-danger btn-lg col-lg-4" type="button" @click="descargarQR()">DESCARGAR QR</button>
             </div>
         </div>
 
@@ -57,9 +61,19 @@ import Header from '../layout/Header.vue';
 /* import Sidebar from '../layout/Sidebar.vue'; */
 import ModalEquipo from '../layout/ModalEquipo.vue';
 import ModalAutomovil from '../layout/ModalAutomovil.vue';
+import router from '@/router';
+
+const descargarQR=():void => {
+    router.push("/")
+}
+
 </script>
     
 <style scoped>
+
+.container{
+padding: 50px;
+}
 .titulo_uno {
     padding-top: 2em;
     padding-bottom: 1em;

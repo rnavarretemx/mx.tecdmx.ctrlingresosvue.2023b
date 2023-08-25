@@ -1,6 +1,6 @@
 <template>
     <!-- Modales Automóvil -->
-    <div class="modal fade" id="modal_auto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <!--   <div class="modal fade" id="modal_auto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -30,11 +30,36 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <b-modal id="modal-automovil" centered title="Registro de autómovil">
+        <!-- <p class="my-4">Vertically centered modal!</p> -->
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label for="txt_nombre" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="txt_nombre" placeholder="Marca del equipo">
+                </div>
+                <div class="col-lg-12">
+                    <label for="txt_paterno" class="form-label">Color</label>
+                    <input type="text" class="form-control" id="txt_paterno" placeholder="Color del equipo">
+                </div>
+                <div class="col-lg-12">
+                    <label for="txt_materno" class="form-label">Placas</label>
+                    <input type="text" class="form-control" id="txt_materno" placeholder="122NS58">
+                </div>
+            </div>
+        </div>
+    </b-modal>
 </template>
 
 <script lang="ts" setup>
 
 </script>
 
-<style scoped></style>
+<style scoped>
+label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+</style>

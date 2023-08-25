@@ -1,7 +1,7 @@
 <template>
     <b-col :sm="`${block.sm}`" :md="`${block.md}`" :lg="`${block.lg}`">
         <div class="button_primary">
-            <b-button size="lg" variant="outline-primary">{{ block.label }}</b-button>
+            <b-button size="lg" variant="outline-primary" :type="block.type" >{{ block.label }}</b-button>
         </div>
     </b-col>
 </template>

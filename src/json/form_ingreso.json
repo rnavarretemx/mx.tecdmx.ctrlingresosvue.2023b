@@ -5,6 +5,7 @@
             "component": "input_text",
             "label": "Nombre",
             "placeholder": "Jhon",
+            "disabled": "disabled",
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -72,8 +73,9 @@
         },
         {
             "id": "txt_personal",
-            "component": "input_select",
+            "component": "input_text",
             "label": "¿A quién visita?",
+            "placeholder": "Lic. Jhon Doe ",
             "options": [],
             "sm": "12",
             "md": "6",
@@ -99,16 +101,18 @@
         },
         {
             "id": "txt_fecha",
-            "component": "input_datepicker",
+            "component": "input_text",
             "label": "Fechas disponible",
+            "placeholder": "20/08/2023",
             "sm": "12",
             "md": "6",
             "lg": "6"
         },
         {
             "id": "txt_hora",
-            "component": "input_timepicker",
+            "component": "input_text",
             "label": "Horas disponibles",
+            "placeholder": "09:00",
             "sm": "12",
             "md": "6",
             "lg": "6"
@@ -116,7 +120,7 @@
         {
             "id": "btn_guardar",
             "component": "button_primary",
-            "label": "GUARDAR",
+            "label": "AUTORIZAR",
             "sm": "12",
             "md": "12",
             "lg": "12"

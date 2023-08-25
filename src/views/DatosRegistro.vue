@@ -7,6 +7,12 @@
                     <component :is="json_data.component" :block="json_data"></component>
                 </template>
             </b-row>
+
+            <b-row>
+                <!--  -->
+
+                <!--  -->
+            </b-row>
         </b-form>
     </b-container>
 </template>
@@ -14,7 +20,7 @@
 <script lang="ts">
 import Header from '../layout/Header.vue';
 /* import { ref } from 'vue'; */
-import Sidebar from '../layout/Sidebar.vue';
+import Sidebar from '../layout/Sidebar.vue'
 import title from "../components/title.vue"
 import subtitle from "../components/subtitle.vue"
 import input_text from "../components/input_text.vue"
@@ -49,6 +55,10 @@ export default{
 </script>
     
 <style scoped>
+
+.container{
+padding: 50px;
+}
 /* div {
     border: solid 1px red;
 }
