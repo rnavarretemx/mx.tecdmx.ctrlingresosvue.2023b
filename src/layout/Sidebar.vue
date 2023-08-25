@@ -12,7 +12,6 @@
     </div> -->
     <b-sidebar id="sidebar-1" title="Menú" bg-variant="secondary" class="bg_sbar" shadow>
 
-
         <button type="button" class="btn btn-outline-light" @click="navegaRegistro()"><i
                 class="bi bi-calendar-plus-fill"></i> Registro</button>
         <button type="button" class="btn btn-outline-light"> <i class="bi bi-calendar3"></i> Calendario</button>
