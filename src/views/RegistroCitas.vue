@@ -9,11 +9,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
-                <!-- <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                <!-- <button v-b-modal.modal-vigilante type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
                     data-bs-target="#modal_registro_vigilante" ><i class="bi bi-person-add"></i></button> -->
              
                     <b-button variant="outline-secondary" v-b-modal.modal-vigilante :sm="12" :md="12" :lg="5">
-                    <b-icon icon="person"></b-icon>
+                    <!-- <b-icon icon="person"></b-icon> --><i class="bi bi-person-add"></i>
                 </b-button>
 
             </div>
@@ -21,8 +21,8 @@
             <div class="col-sm-6 col-md-6 col-lg-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
-                        <!-- <i class="bi bi-qr-code-scan"> </i>  -->
-                        <b-icon icon="code-square" ></b-icon>
+                        <i class="bi bi-qr-code-scan"> </i> 
+                        <!-- <b-icon icon="code-square" ></b-icon> -->
                         
                     </span>
                     <input type="text" class="form-control" placeholder="C&oacute;digo de la cita"
@@ -52,8 +52,8 @@
                         <td>20/08/2023 09:00</td>
                         <td>
                             <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-eye-fill"></i></button> -->
-                            <b-button variant="outline-secondary"  :sm="12" :md="12" :lg="5">
-                                <b-icon icon="gear-fill"></b-icon>
+                            <b-button @click="verRegistroCita()" variant="outline-secondary"  :sm="12" :md="12" :lg="5">
+                                <i class="bi bi-eye-fill"></i>
                             </b-button>
                         </td>
                     </tr>
@@ -64,8 +64,8 @@
                         <td>20/08/2023 09:00</td>
                         <td>
                             <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-eye-fill"></i> </button>-->
-                                <b-button variant="outline-secondary"  :sm="12" :md="12" :lg="5">
-                                <b-icon icon="gear-fill"></b-icon>
+                                <b-button @click="verRegistroCita()" variant="outline-secondary"  :sm="12" :md="12" :lg="5">
+                                    <i class="bi bi-eye-fill"></i>
                             </b-button>
                             
                         </td>
@@ -77,8 +77,8 @@
                         <td>20/08/2023 09:00</td>
                         <td>
                             <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-eye-fill"></i></button> -->
-                            <b-button variant="outline-secondary"  :sm="12" :md="12" :lg="5">
-                                <b-icon icon="gear-fill"></b-icon>
+                            <b-button @click="verRegistroCita()" variant="outline-secondary"  :sm="12" :md="12" :lg="5">
+                                <i class="bi bi-eye-fill"></i>
                             </b-button>
                         </td>
                     </tr>
@@ -94,7 +94,7 @@
 <script lang="ts" >
 import Header from '../layout/Header.vue';
 import Sidebar from '../layout/Sidebar.vue';
-
+import router from '@/router';
 import ModalRegistroVigilante from '../layout/ModalRegistroVigilante.vue';
 
 import { BIconGearFill, BIconPerson, BIconCodeSquare } from 'bootstrap-vue'
@@ -107,10 +107,18 @@ export default{
     },
     components: { 
         Header, 
+        ModalRegistroVigilante,
         BIconGearFill,
         BIconCodeSquare,
         BIconPerson // <- The icon needs to be registered with your page/app
+    },
+    methods:{
+        verRegistroCita
     }
+  }
+
+  function verRegistroCita(){
+    router.push("/registro")
   }
 </script>
 

@@ -12,22 +12,35 @@
         <!-- <template v-for="json_data in comp_navbar.body">
             <component :is="json_data.component" :block="json_data"></component>
           </template> -->
-          <h3> {{ titulo_navbar }}</h3>
-       
+        <h3> {{ titulo_navbar }}</h3>
+
       </b-col>
 
       <b-col sm="4" md="3" lg="2" class="col-div">
         <!-- &nbsp; -->
+        <b-button  variant="outline-secondary"  v-b-toggle.sidebar-1>
+          <i class="bi bi-list"></i>
+        </b-button>
+        <!-- <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          <i class="bi bi-list"></i>
+        </button> -->
       </b-col>
 
     </b-row>
   </b-navbar>
+  <Sidebar></Sidebar>
 </template>
 
 <script lang="ts">
+import Sidebar from '../layout/Sidebar.vue';
+
 export default {
   props: {
     titulo_navbar: String
+  },
+  components: {
+    Sidebar
   }
 }
 /* import title from "../components/title.vue"
@@ -76,18 +89,25 @@ export default {
 
 .col-div:first-child {
   padding: 10px !important;
-  background: #75096C;
+  background: #690061;
   text-align: center;
 }
 
-.col-div:nth-child(2) {
+.col-div:nth-child(2),
+.col-div:nth-child(3) {
   padding: 16px !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.col-div:nth-child(2) h3{
+/* .col-div:nth-child(3){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ */
+.col-div:nth-child(2) h3 {
   font-size: 2em;
   font-weight: 700;
   letter-spacing: 2px;

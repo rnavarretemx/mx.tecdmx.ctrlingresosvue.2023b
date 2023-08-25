@@ -5,6 +5,8 @@
             <!-- <b-form-select v-model="selected"  :options="" :id="`${block.id}`"></b-form-select> -->
             <select class="form-select" aria-label="Default select example">
                 <option selected>Seleccione al personal</option>
+                <option >Lic. Juan Pérez</option>
+                <option >Lic. Diana Susana</option>
                 <option v-for="option in select_options" :value="option.id">{{ option.nombre }}</option>
             </select>
         </div>
