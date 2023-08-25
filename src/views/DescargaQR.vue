@@ -1,16 +1,15 @@
 <template>
-    <Header></Header>
-    <Sidebar></Sidebar>
+    <Header titulo_navbar="Datos del ingreso"></Header>
+    <!-- <Sidebar></Sidebar> -->
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
-                <h3>Datos del registro</h3>
                 <h5>El registro de su visita se ha generado con el siguiente c&oacute;digo QR.</h5>
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 text-center img_qr">
-                <img src="../../assets/qr-code.webp" alt="">
+                <img src="../assets/qr-code.webp" alt="">
                 <h6>C&oacute;digo generado: <span>6876aomfj897345sdfk125</span></h6>
             </div>
         </div>
@@ -55,7 +54,7 @@
     
 <script lang="ts" setup>
 import Header from '../layout/Header.vue';
-import Sidebar from '../layout/Sidebar.vue';
+/* import Sidebar from '../layout/Sidebar.vue'; */
 import ModalEquipo from '../layout/ModalEquipo.vue';
 import ModalAutomovil from '../layout/ModalAutomovil.vue';
 </script>
