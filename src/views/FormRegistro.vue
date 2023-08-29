@@ -1,24 +1,22 @@
 <template>
     <Header titulo_navbar="Registro de ingreso"></Header>
     <b-container>
-        <b-form @submit="onSubmit">
+        <b-form>
             <b-row>
-                <template v-for="json_data in form_registro.body">
-                    <component :is="json_data.component" :block="json_data"></component>
+                <template v-for="json_data in data">
+                    <component :is="setSelectedComponent(json_data.component)" :block="json_data"></component>
                 </template>
             </b-row>
-
-            <!-- <div class="button_primary">
-                <b-button size="lg" variant="outline-primary">GUARDAR</b-button>
-            </div>
-            <b-button type="submit" variant="primary">Submit</b-button> -->
         </b-form>
     </b-container>
 </template>
 
 
-<script lang="ts">
-/* import navbar_header from "../components/header.vue" */
+<script lang="ts" setup>
+import router from '@/router';
+import axios from "axios";
+import { ref } from "vue";
+
 import Header from '../layout/Header.vue';
 import title from "../components/title.vue"
 import subtitle from "../components/subtitle.vue"
@@ -27,58 +25,64 @@ import input_select from "../components/input_select.vue"
 import input_datepicker from "../components/input_datepicker.vue"
 import input_timepicker from "../components/input_timepicker.vue"
 import button_primary from "../components/button_primary.vue"
+import form_registro from "../json/form_registro.json"
 
-import router from '@/router';
 
-const form_registro = require('../json/form_registro.json');
+let arrOptions: any = [];
+/* const data: [] = form_registro.body; */
+const data = ref(form_registro.body);
+const personal = ref([]);
 
-export default {
-    data() {
-        return {
-            form_registro
-        };
-    },
-    methods: {
-        onSubmit(e) {
-            e.preventDefault()
-            /* alert("hola"); */
-             router.push("/cita")
-            /* router.push({ path: '/cita', replace: true }) */
-        }
-    },
-    name: "form_registro",
-    components: {
-        /*  navbar_header, */
-        Header,
-        title,
-        subtitle,
-        input_text,
-        input_select,
-        input_datepicker,
-        input_timepicker,
-        button_primary
+const components = {
+    title,
+    subtitle,
+    input_text,
+    input_select,
+    input_datepicker,
+    input_timepicker,
+    button_primary
+}
+
+const getData = async () => {
+    try {
+        const { data } = await axios.get("http://127.0.0.1:8000/api/personal/readall/");
+        personal.value = data.personal;
+    } catch (error) {
+        console.log(error);
     }
 };
 
-/* const onSubmit = (e): void => {
-   e.preventDefault()
-   alert("hola");
-  alert(JSON.stringify(this.form)) 
-}*/
+getData();
+
+const setSelectedComponent = (tab): any => {
+
+    if(tab == "input_select"){
+        console.log("ES SELECT");
+        
+        for (var i = 0; i < personal.value.length; i++) {
+            let persona = {
+                "value": personal.value[i].id,
+                "text": personal.value[i].nombre + " " + personal.value[i].ap_paterno + " " + (personal.value[i].materno != null ) ? personal.value[i].materno : "",
+            }
+            arrOptions.push(persona);
+        }
+
+        /* components[tab].options = arrOptions;
+        console.log(components[tab].options); */
+        
+    }
+        return components[tab];
+};
+
+/* const componente: any = data.find(o => o.id == "txt_personal");
+    componente.options = arrOptions; */
+    
+
 </script>
     
 <style scoped>
 .container {
     padding: 50px;
 }
-
-/* .titulo_uno {
-    padding-top: 2em;
-    padding-bottom: 1em;
-}
-
-.titulo_uno h3 {
-    font-size: 40px;
-} */
 </style>
     
