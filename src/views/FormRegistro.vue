@@ -31,6 +31,8 @@ import form_registro from "../json/form_registro.json"
 let arrOptions: any = [];
 /* const data: [] = form_registro.body; */
 const data = ref(form_registro.body);
+/* var data_options =  data.find(o => o.id == "txt_personal"); */
+/* data_options.options = getData(); */
 const personal = ref([]);
 
 const components = {
@@ -43,40 +45,31 @@ const components = {
     button_primary
 }
 
+
 const getData = async () => {
     try {
         const { data } = await axios.get("http://127.0.0.1:8000/api/personal/readall/");
         personal.value = data.personal;
-    } catch (error) {
-        console.log(error);
-    }
-};
 
-getData();
-
-const setSelectedComponent = (tab): any => {
-
-    if(tab == "input_select"){
-        console.log("ES SELECT");
-        
         for (var i = 0; i < personal.value.length; i++) {
             let persona = {
                 "value": personal.value[i].id,
-                "text": personal.value[i].nombre + " " + personal.value[i].ap_paterno + " " + (personal.value[i].materno != null ) ? personal.value[i].materno : "",
+                "text": personal.value[i].nombre + " " + personal.value[i].ap_paterno + " " + (personal.value[i].materno != null) ? personal.value[i].materno : "",
             }
             arrOptions.push(persona);
         }
-
-        /* components[tab].options = arrOptions;
-        console.log(components[tab].options); */
-        
+    } catch (error) {
+        console.log(error);
     }
-        return components[tab];
+    return arrOptions;
+};
+getData();
+const setSelectedComponent = (tab): any => {
+    return components[tab];
 };
 
 /* const componente: any = data.find(o => o.id == "txt_personal");
     componente.options = arrOptions; */
-    
 
 </script>
     
