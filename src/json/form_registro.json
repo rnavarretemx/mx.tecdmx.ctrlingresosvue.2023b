@@ -13,6 +13,7 @@
             "component": "input_text",
             "label": "Nombre",
             "placeholder": "Jhon",
+            "disabled": false,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -22,6 +23,7 @@
             "component": "input_text",
             "label": "Apellido Paterno",
             "placeholder": "Doe",
+            "disabled": false,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -31,6 +33,7 @@
             "component": "input_text",
             "label": "Apellido Materno",
             "placeholder": "Opcional",
+            "disabled": false,
             "sm": "12",
             "md": "12",
             "lg": "4"
@@ -48,6 +51,7 @@
             "component": "input_text",
             "label": "Procedencia",
             "placeholder": "Organización o Instituto",
+            "disabled": false,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -57,6 +61,7 @@
             "component": "input_text",
             "label": "Asunto",
             "placeholder": "-",
+            "disabled": false,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -66,6 +71,7 @@
             "component": "input_text",
             "label": "Contacto",
             "placeholder": "5526548974",
+            "disabled": false,
             "sm": "12",
             "md": "12",
             "lg": "4"
@@ -80,9 +86,10 @@
         },
         {
             "id": "txt_personal",
-            "component": "input_select",
+            "component": "input_datalist",
             "label": "¿A quién visita?",
             "options": [],
+            "function": "changeSelectedItem",
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -92,6 +99,7 @@
             "component": "input_text",
             "label": "Área o piso",
             "placeholder": "4N - Unidad de Servicios Informáticos",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -101,6 +109,7 @@
             "component": "input_text",
             "label": "Extensión",
             "placeholder": "1172",
+            "disabled": true,
             "sm": "12",
             "md": "12",
             "lg": "4"

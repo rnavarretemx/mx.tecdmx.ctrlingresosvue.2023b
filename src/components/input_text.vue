@@ -2,7 +2,13 @@
     <b-col :sm="`${block.sm}`" :md="`${block.md}`" :lg="`${block.lg}`">
         <div class="input_text">
             <label :for="`${block.id}`"> {{ block.label }} </label>
-            <b-form-input :placeholder="`${block.placeholder}`" :id="`${block.id}`"></b-form-input>
+            <b-form-input 
+            :placeholder="`${block.placeholder}`" 
+            :id="`${block.id}`" 
+            v-model="block.id"
+            :readonly=block.disabled>
+            <!-- {{ block.id }} v-model="block.id" -->
+            </b-form-input>
         </div>
     </b-col>
 </template>

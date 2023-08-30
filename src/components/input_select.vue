@@ -3,7 +3,7 @@
         <div class="input_select">
             <label :for="`${block.id}`"> {{ block.label }} </label>
             <select class="form-select">
-                <option selected>Seleccione al personal</option>
+                <!-- <option selected>Seleccione al personal</option> -->
                 <option v-for="option in block.options" :value="option.value">{{ option.text }}</option>
             </select>
         </div>
