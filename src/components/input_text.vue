@@ -5,22 +5,29 @@
             <b-form-input 
             :placeholder="`${block.placeholder}`" 
             :id="`${block.id}`" 
-            v-model="block.id"
-            :readonly=block.disabled>
-            <!-- {{ block.id }} v-model="block.id" -->
+            :required=block.required
+            :readonly=block.disabled
+            >
             </b-form-input>
         </div>
     </b-col>
 </template>
 
+<!-- v-model = "props.txt_model" 
+    txt_model: String,-->
+
 <script lang="ts">
 export default {
-    props: {
-        block: Object
-    },
     name: "input_text"
 };
 
+</script>
+
+<script lang="ts" setup>
+const props = defineProps({
+    block: Object,
+    
+});
 </script>
 
 <style scoped>

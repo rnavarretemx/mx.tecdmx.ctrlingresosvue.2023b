@@ -3,19 +3,29 @@
         <div class="input_datepicker">
             <label :for="`${block.id}`"> {{ block.label }} </label>
             <!-- <b-form-input :placeholder="`${block.placeholder}`"></b-form-input> -->
-            <b-form-datepicker :id="`${block.id}`"></b-form-datepicker>
+            <b-form-datepicker 
+            :id="`${block.id}`" 
+            @input="selectedDate($event)" ></b-form-datepicker>
         </div>
     </b-col>
 </template>
 
 <script lang="ts">
 export default {
-    props: {
-        block: Object
-    },
     name: "input_datepicker"
 };
 
+</script>
+
+<script lang="ts" setup>
+const props = defineProps({
+    block: Object,
+});
+const emit = defineEmits(['onSelectedDate'])
+const selectedDate = (e) => {
+    emit('onSelectedDate',e);
+    /* alert(e); */
+}
 </script>
 
 <style scoped>
