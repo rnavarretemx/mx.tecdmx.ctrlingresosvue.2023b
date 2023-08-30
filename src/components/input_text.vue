@@ -5,7 +5,6 @@
             <b-form-input 
             :placeholder="`${block.placeholder}`" 
             :id="`${block.id}`" 
-            v-model="block.id"
             :readonly=block.disabled>
             <!-- {{ block.id }} v-model="block.id" -->
             </b-form-input>
