@@ -39,7 +39,7 @@
 
                     <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">¿Necesitas registrar
                         autom&oacute;vil?</b-button>
-
+{{ $route.params }}
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 text-center">
                 <button class="btn btn-outline-danger btn-lg col-lg-4" type="button" @click="descargarQR()">DESCARGAR QR</button>
@@ -62,6 +62,25 @@ import Header from '../layout/Header.vue';
 import ModalEquipo from '../layout/ModalEquipo.vue';
 import ModalAutomovil from '../layout/ModalAutomovil.vue';
 import router from '@/router';
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+
+const getData = async () => {
+    console.log(route.params);
+    /* console.log(route.params.data_); */
+    /* try {
+        const { data } = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
+        );
+        pokeSprite.value = data.sprites.front_default;
+    } catch (error) {
+        console.log(error);
+        pokeSprite.value = null;
+    } */
+};
+
+getData();
 
 const descargarQR=():void => {
     router.push("/")

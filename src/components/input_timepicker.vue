@@ -3,21 +3,28 @@
         <div class="input_timepicker">
             <label :for="`${block.id}`"> {{ block.label }} </label>
             <!-- <b-form-input :placeholder="`${block.placeholder}`"></b-form-input> -->
-            <b-form-timepicker locale="en"></b-form-timepicker>
+            <b-form-timepicker locale="en"
+            @input="selectedTime($event)" ></b-form-timepicker>
         </div>
     </b-col>
 </template>
 
 <script lang="ts">
 export default {
-    props: {
-        block: Object
-    },
     name: "input_timepicker"
 };
 
 </script>
-
+<script lang="ts" setup>
+const props = defineProps({
+    block: Object,
+});
+const emit = defineEmits(['onSelectedTime'])
+const selectedTime = (e) => {
+    emit('onSelectedTime',e);
+    /* alert(e); */
+}
+</script>
 <style scoped>
 div{
     margin-bottom: 10px;

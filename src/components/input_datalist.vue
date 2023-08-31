@@ -1,7 +1,10 @@
 <template>
     <b-col :sm="`${block.sm}`" :md="`${block.md}`" :lg="`${block.lg}`">
         <label :for="`${block.id}`"> {{ block.label }} </label>
-        <b-form-input :list="`${block.id}`" :id="`${block.id}_input`" @change="selectedItem($event)">
+        <b-form-input 
+        :list="`${block.id}`" 
+        :id="`${block.id}_input`" 
+        @change="selectedItem($event)">
         </b-form-input>
         <datalist :id="`${block.id}`">
             <option v-for="o in block.options" :value="o.value">{{ o.text }}</option>
@@ -11,7 +14,7 @@
 
 <!-- @input="selectedItem(2)" :value="o.id" :value="o.value"-->
 
-<script lang="ts" >
+<script lang="ts" >  
 export default {
     name: "input_datalist"
 }
@@ -26,6 +29,7 @@ const emit = defineEmits(['onSelectedItem'])
 
 const selectedItem = (e) => {
     emit('onSelectedItem',e);
+    /* alert(e); */
 }
 </script>
 
