@@ -31,11 +31,11 @@ import input_datepicker from "../components/input_datepicker.vue"
 import input_timepicker from "../components/input_timepicker.vue"
 import button_primary from "../components/button_primary.vue"
 import form_registro from "../json/form_registro.json"
-import { type } from 'jquery';
+/* import { type } from 'jquery'; */
 
 let arrOptions: any = [];
 const personal = ref([]);
-const ingreso = ref([]);
+const ingreso = ref();
 var j_data = ref([]);
 let txt_areapiso = ref("");
 let txt_extension = ref("");
@@ -52,6 +52,10 @@ const components = {
     input_timepicker,
     button_primary
 }
+
+/* const props = defineProps({
+    data_o: Object,
+}); */
 
 onBeforeMount(() => {
     getData();
@@ -143,10 +147,21 @@ const onSubmit = async (e) => {
 
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
         ingreso.value = data;
-        /* console.log(data); */
-        /* router.push("/registro") */
-        router.push({ name: 'cita', params: { registro:  data} });
+        /* /*  */
+        /* router.push("/registro") */ 
+        /* { registro:  "ingreso.value"} */
+        /* console.log("ingreso:",ingreso); */
+        /* console.log("data:",typeof data); */
+        console.log(JSON.stringify(data));
+        var otro = JSON.stringify(data);
         
+        router.push({ 
+            name: 'cita', 
+            params: {otro2: otro.toString()},
+        });
+        
+        // router.push({ name: 'user', params: { username } }) 
+
     } catch (error) {
         console.log(error);
     }

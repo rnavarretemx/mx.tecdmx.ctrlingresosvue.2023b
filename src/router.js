@@ -61,6 +61,7 @@ const routeInfos = [
         path: "/cita",
         name: "cita",
         component: DescargarQR,
+        props: true,
       },
       {
         path: "/agenda",

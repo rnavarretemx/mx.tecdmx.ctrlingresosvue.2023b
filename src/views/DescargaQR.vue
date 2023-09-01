@@ -6,6 +6,9 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
                 <h5>El registro de su visita se ha generado con el siguiente c&oacute;digo QR.</h5>
+            
+                <!-- {{"data: "+ data_o.message}} -->
+
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 text-center img_qr">
@@ -39,7 +42,7 @@
 
                     <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">¿Necesitas registrar
                         autom&oacute;vil?</b-button>
-{{ $route.params }}
+
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 text-center">
                 <button class="btn btn-outline-danger btn-lg col-lg-4" type="button" @click="descargarQR()">DESCARGAR QR</button>
@@ -61,13 +64,26 @@ import Header from '../layout/Header.vue';
 /* import Sidebar from '../layout/Sidebar.vue'; */
 import ModalEquipo from '../layout/ModalEquipo.vue';
 import ModalAutomovil from '../layout/ModalAutomovil.vue';
+import { ref, onBeforeMount, onMounted } from "vue";
 import router from '@/router';
 import { useRoute, useRouter } from "vue-router";
 
+const props = defineProps({
+    data_o: Object,
+    otro2: String,
+  
+});
+
+
+
+
 const route = useRoute();
+const ingreso = ref();
 
 const getData = async () => {
     console.log(route.params);
+    ingreso.value = route.params;
+    console.log(ingreso);
     /* console.log(route.params.data_); */
     /* try {
         const { data } = await axios.get(
@@ -80,7 +96,22 @@ const getData = async () => {
     } */
 };
 
-getData();
+/* getData(); */
+onMounted(  () => {
+    console.log(route.name);
+    console.log(route.params.otro2);
+    console.log(route.params);
+
+    /* console.log(JSON.parse(route.name)); */
+    /* console.log(JSON.parse(route.params.ingreso)); */
+    /* console.log(JSON.stringify(route.params.ingreso)); */
+    /* console.log(route.data_o); */
+    /* console.log(route.name);
+    console.log(route.params); */
+    /* $route.params.registro */
+    /* ingreso.value = route.params.registro;
+    console.log(ingreso); */
+});
 
 const descargarQR=():void => {
     router.push("/")
