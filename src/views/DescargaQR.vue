@@ -99,9 +99,9 @@ const getData = async () => {
 /* getData(); */
 onMounted(  () => {
     console.log(route.name);
-    console.log(route.params.otro2);
-    console.log(route.params);
+    console.log(route.params.registro);
 
+    /* console.log(route.params); */
     /* console.log(JSON.parse(route.name)); */
     /* console.log(JSON.parse(route.params.ingreso)); */
     /* console.log(JSON.stringify(route.params.ingreso)); */

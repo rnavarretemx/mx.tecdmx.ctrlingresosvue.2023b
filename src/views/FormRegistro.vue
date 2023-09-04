@@ -147,17 +147,17 @@ const onSubmit = async (e) => {
 
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
         ingreso.value = data;
-        /* /*  */
+        
         /* router.push("/registro") */ 
         /* { registro:  "ingreso.value"} */
         /* console.log("ingreso:",ingreso); */
         /* console.log("data:",typeof data); */
-        console.log(JSON.stringify(data));
+        /* console.log(JSON.stringify(data)); */
+        /*  const otro3 = "funciona"; */
         var otro = JSON.stringify(data);
-        
         router.push({ 
             name: 'cita', 
-            params: {otro2: otro.toString()},
+            params: {registro: otro},
         });
         
         // router.push({ name: 'user', params: { username } }) 
