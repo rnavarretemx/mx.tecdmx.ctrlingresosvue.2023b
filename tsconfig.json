@@ -54,7 +54,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "src/router.js"
-  ],
+, "src/composables/components.js"  ],
   "exclude": [
     "node_modules"
   ]
