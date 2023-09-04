@@ -44,17 +44,18 @@ import FormRegistro from './views/FormRegistro.vue';
 import DatosRegistro from './views/DatosRegistro.vue';
 import DescargarQR from './views/DescargaQR.vue';
 import RegistroCitas from './views/RegistroCitas.vue';
+import RegistroVisitante from './views/RegistroVisitante.vue'
     
 
 const routeInfos = [
       {
         path: "/",
-        name: "home",
-        component: FormRegistro,
+        name: "registro",
+        component: RegistroVisitante,
       },
       {
-        path: "/registro",
-        name: "registro",
+        path: "/registro2",
+        name: "registro2",
         component: DatosRegistro,
       },
       {
