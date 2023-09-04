@@ -4,7 +4,7 @@
     @setDatePicker="setDatePicker" 
     @setTimePicker="setTimePicker">
     </FormRegistro>
-    <DescargaQR v-if="show"
+    <DescargaQR v-if="!show"
     :data="ingreso"></DescargaQR>
 </template>
 
