@@ -13,8 +13,11 @@
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 text-center img_qr">
-                <img src="../../assets/qr-code.webp" alt="">
-                <h6>C&oacute;digo generado: <span>6876aomfj897345sdfk125</span></h6>
+                <!-- <img src="../../assets/qr-code.webp" alt=""> -->
+                <!-- <img src="http://localhost/resources/images/`${data.datos_ingreso.codigo_qr}`" alt=""> -->
+                <!-- <img src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/{data.datos_ingreso.codigo_qr}" alt=""> -->
+                <!-- <img alt="" :src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/`${data.datos_ingreso.codigo_qr}`"> -->
+                <h6>C&oacute;digo generado: <span>{{data.datos_ingreso.codigo}}</span></h6>
             </div>
         </div>
 
@@ -22,12 +25,12 @@
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
                 <h6>Nombre del visitante</h6>
                 <h6 class="txt_dato">
-                     {{ data  }}
+                     {{ data.datos_visitante.nombre  }}
                     </h6>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
                 <h6>Fecha y hora de la cita</h6>
-                <h6 class="txt_dato">26/08/2023</h6>
+                <h6 class="txt_dato">{{data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada}}</h6>
             </div>
         </div>
 
@@ -76,7 +79,10 @@ const props = defineProps({
   
 });
 
-
+/* const srcImage = ref("http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"+ props.data.datos_ingreso.codigo_qr)
+const getImg = computed(() => {
+  return srcImage.value
+}) */
 
 
 /*const route = useRoute();

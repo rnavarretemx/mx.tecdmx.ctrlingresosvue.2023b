@@ -1,10 +1,10 @@
 <template>
-    <FormRegistro v-if="show" 
+    <FormRegistro v-if="showForm" 
     @onSubmit="onSubmit" 
     @setDatePicker="setDatePicker" 
     @setTimePicker="setTimePicker">
     </FormRegistro>
-    <DescargaQR v-if="!show"
+    <DescargaQR v-if="showQR"
     :data="ingreso"></DescargaQR>
 </template>
 
@@ -14,7 +14,8 @@ import axios from "axios";
 import FormRegistro from '../layout/registro/FormRegistro.vue';
 import DescargaQR from '../layout/registro/DescargaQR.vue';
 
-var show = true;
+var showForm = ref(true);
+var showQR = ref(false);
 var fecha_select = "";
 var hora_select = "";
  const ingreso = ref();
@@ -33,7 +34,6 @@ const setTimePicker = (e) => {
 
 const onSubmit = async (e) => {
     e.preventDefault();
-    
 
     /* change to v-model */
     var c_nombre = document.getElementById("txt_nombre");
@@ -67,21 +67,18 @@ const onSubmit = async (e) => {
          console.log(c_fecha);
          console.log(c_hora); */
 
-
-
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
         ingreso.value = data;
         console.log(JSON.stringify(data));
 
         if (data != null) {
-            show = false;
+            alert("entro valid");
+            showForm.value = false;
+            showQR.value = true;
         } else {
-            show = true;
+            showForm.value = true;
+            showQR.value = false;
         }
-
-        /* alert(show); */
-
-
 
     } catch (error) {
         console.log(error);
