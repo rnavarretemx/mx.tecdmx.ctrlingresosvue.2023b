@@ -8,19 +8,19 @@
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro de autom&oacute;vil</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
+
                 <form @submit.prevent="onSubmit">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <label for="txt_marca" class="form-label">Marca</label>
-                                <input type="text" class="form-control" id="txt_marca" required
-                                    placeholder="Marca del equipo">
+                                <label for="txt_marca_auto" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="txt_marca_auto" required
+                                    placeholder="Marca del vehículo">
                             </div>
                             <div class="col-lg-12">
                                 <label for="txt_color" class="form-label">Color</label>
                                 <input type="text" class="form-control" id="txt_color" required
-                                    placeholder="Color del equipo">
+                                    placeholder="Color del vehículo">
                             </div>
                             <div class="col-lg-12">
                                 <label for="txt_placas" class="form-label">Placas</label>
@@ -62,11 +62,42 @@
 import axios from "axios";
 
 const onSubmit = async () => {
-    alert("guardarAutomovil");
-    var c_marca = document.getElementById("txt_marca");
+    
+    var c_marca = document.getElementById("txt_marca_auto");
     var c_color = document.getElementById("txt_color");
     var c_placas = document.getElementById("txt_placas");
+    var cod_ingreso = props.data.datos_ingreso.codigo;
+    console.log(c_marca.value);
+    console.log(c_color.value);
+    console.log(c_placas.value);
+    console.log(cod_ingreso);
+    
+
+    try {
+        const formData = new FormData();
+        formData.append('marca', c_marca.value);
+        formData.append('color', c_color.value);
+        formData.append('placas', c_placas.value);
+        formData.append('cod_ingreso', cod_ingreso);
+        const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/guardar_auto', formData);
+        console.log(JSON.stringify(data));
+
+
+        if (data.status == "success") {
+            alert("Se registró el vehículo para la visita: " + data.datos_visitante.nombre);
+        } else {
+            alert(data.message);
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
 }
+
+const props = defineProps({
+    data: Object
+
+});
 </script>
 
 <style scoped>

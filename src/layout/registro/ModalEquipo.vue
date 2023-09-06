@@ -9,34 +9,31 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form @submit.prevent="onSubmit">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <label for="txt_marca" class="form-label">Marca</label>
-                            <input type="text" class="form-control" id="txt_marca" 
-                            required
-                            placeholder="Marca del equipo">
-                        </div>
-                        <div class="col-lg-12">
-                            <label for="txt_modelo" class="form-label">Modelo</label>
-                            <input type="text" class="form-control" id="txt_modelo" 
-                            required
-                            placeholder="Modelo del equipo">
-                        </div>
-                        <div class="col-lg-12">
-                            <label for="txt_noserie" class="form-label">N&uacute;mero de serie</label>
-                            <input type="text" class="form-control" id="txt_noserie" 
-                            required
-                            placeholder="12452122NS58">
-                            <!-- {{ data.datos_ingreso.codigo }} -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label for="txt_marca" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="txt_marca" required
+                                    placeholder="Marca del equipo">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="txt_modelo" class="form-label">Modelo</label>
+                                <input type="text" class="form-control" id="txt_modelo" required
+                                    placeholder="Modelo del equipo">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="txt_noserie" class="form-label">N&uacute;mero de serie</label>
+                                <input type="text" class="form-control" id="txt_noserie" required
+                                    placeholder="12452122NS58">
+                                <!-- {{ data.datos_ingreso.codigo }} -->
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -73,18 +70,18 @@ const onSubmit = async () => {
 
     try {
         const formData = new FormData();
-        formData.append('marca',c_marca.value);    
-        formData.append('modelo',c_modelo.value);    
-        formData.append('no_serie',c_noserie.value);    
-        formData.append('cod_ingreso',cod_ingreso);    
+        formData.append('marca', c_marca.value);
+        formData.append('modelo', c_modelo.value);
+        formData.append('no_serie', c_noserie.value);
+        formData.append('cod_ingreso', cod_ingreso);
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/guardar_equipo', formData);
         registro.value = data;
         console.log(JSON.stringify(data));
 
 
-        if(data.status ="success"){
+        if (data.status == "success") {
             alert("Se registró el equipo para la visita: " + data.datos_visitante.nombre);
-        }else{
+        } else {
             alert(data.message);
         }
 
@@ -101,7 +98,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
-label{
+label {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;

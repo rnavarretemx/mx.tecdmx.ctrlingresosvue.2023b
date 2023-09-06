@@ -69,7 +69,7 @@
 
 
         <ModalEquipo :data="data"></ModalEquipo>
-        <ModalAutomovil></ModalAutomovil>
+        <ModalAutomovil :data="data"></ModalAutomovil>
 
 
     </div>
