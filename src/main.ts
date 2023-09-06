@@ -2,8 +2,10 @@ import { createApp } from '@vue/compat'
 import App from './App.vue'
 import router from "./router";
 
-import { BootstrapVue, IconsPlugin, BIcon, BootstrapVueIcons  } from 'bootstrap-vue'
+import { BootstrapVue} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
+
 import "bootstrap-icons/font/bootstrap-icons.css"
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 /* import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'

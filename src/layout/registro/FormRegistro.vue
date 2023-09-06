@@ -1,17 +1,13 @@
 <template>
-    <!-- <Header titulo_navbar="Registro de ingreso"></Header> -->
+    
     <b-container>
         <b-form @submit.prevent="onSubmit">
             <b-row>
                 <template v-for="json_data in j_data">
-                    <component 
-                    :is="setSelectedComponent(json_data.component)" 
-                    :block="json_data"
-                    @onSelectedItem="changeSelectedItem"
-                    @onSelectedDate="setDatePicker"
-                    @onSelectedTime="setTimePicker"
-                    >
-                </component>
+                    <component :is="setSelectedComponent(json_data.component)" :block="json_data"
+                        @onSelectedItem="changeSelectedItem" @onSelectedDate="setDatePicker"
+                        @onSelectedTime="setTimePicker">
+                    </component>
                 </template>
             </b-row>
         </b-form>
@@ -24,15 +20,14 @@ import router from '@/router';
 import axios from "axios";
 import { ref, onBeforeMount } from "vue";
 
-import Header from '../Header.vue';
 
 /* Importación del json y del composable de los componentes.  */
 import form_registro from "../../json/form_registro.json";
- import { components } from '../../composables/components';
-const { setSelectedComponent  } = components();
+import { components } from '../../composables/components';
+const { setSelectedComponent } = components();
 
-var fecha_select = "";
-var hora_select = "";
+/* var fecha_select = "";
+var hora_select = ""; */
 let txt_areapiso = ref("");
 let txt_extension = ref("");
 var j_data = ref([]);
@@ -97,17 +92,17 @@ const emit = defineEmits([
     'setTimePicker'
 ])
 
-const setDatePicker = (e) =>{
-    emit('setDatePicker',e);
+const setDatePicker = (e) => {
+    emit('setDatePicker', e);
 
 }
 
-const setTimePicker = (e) =>{
-    emit('setTimePicker',e);
+const setTimePicker = (e) => {
+    emit('setTimePicker', e);
 }
 
 const onSubmit = async (e) => {
-    emit('onSubmit',e);
+    emit('onSubmit', e);
 }
 
 </script>

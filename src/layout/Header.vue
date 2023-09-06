@@ -1,62 +1,49 @@
 <template>
-  <b-navbar toggleable type="dark" variant="info">
+  <b-navbar>
     <b-row class="w-100">
 
       <b-col sm="12" md="5" lg="3" class="col-div">
+
         <b-navbar-brand>
           <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
         </b-navbar-brand>
+        <div>
+          <button class="btn" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+
+
       </b-col>
 
-      <b-col sm="8" md="4" lg="7" class="col-div">
-        <!-- <template v-for="json_data in comp_navbar.body">
-            <component :is="json_data.component" :block="json_data"></component>
-          </template> -->
-        <h3> {{ titulo_navbar }}</h3>
+      <b-col cols="12" sm="12" md="7" lg="9" class="col-div">
+
+        <h3> {{ encabezado }}</h3>
 
       </b-col>
 
-      <b-col sm="4" md="3" lg="2" class="col-div">
-        <!-- &nbsp; -->
-        <b-button  variant="outline-secondary"  v-b-toggle.sidebar-1>
+      <!--<b-col cols="3" sm="4" md="3" lg="2" class="col-div">
+        
+         v-b-toggle.offcanvasExample -->
+      <!-- <b-button  variant="outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
           <i class="bi bi-list"></i>
-        </b-button>
-        <!-- <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample">
-          <i class="bi bi-list"></i>
-        </button> -->
-      </b-col>
+        </b-button> 
+
+      </b-col>-->
 
     </b-row>
   </b-navbar>
   <Sidebar></Sidebar>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Sidebar from '../layout/Sidebar.vue';
 
-export default {
-  props: {
-    titulo_navbar: String
-  },
-  components: {
-    Sidebar
-  }
-}
-/* import title from "../components/title.vue"
-const comp_navbar = require('../json/navbar_header.json');
+const props = defineProps({
+  encabezado: String
 
-export default {
-  data() {
-        return {
-          comp_navbar
-        };
-    },
-  name: "navbar_header",
-  components:{
-    title
-  }
-}; */
+});
 
 </script>
   
@@ -66,16 +53,6 @@ export default {
   padding: 0;
 }
 
-.navbar_header {
-  /* display: flex; */
-  border: solid 1px yellow;
-}
-
-.col-div {
-  /* border: solid 2px rgb(0, 255, 255); */
-  padding: 0 !important;
-}
-
 .navbar {
   background: #eceff1 !important;
   padding: 0 !important;
@@ -83,14 +60,31 @@ export default {
 
 .row {
   margin: 0;
-  /* padding: 0 !important; */
-  /* border: solid 2px red; */
+}
+
+.col-div:first-child button {
+  display: flex;
+  float: right;
+  color: white;
 }
 
 .col-div:first-child {
   padding: 10px !important;
   background: #690061;
   text-align: center;
+  display: flex;
+
+}
+
+.col-div:first-child div:first-child {
+  width: 90%;
+}
+
+.col-div:first-child div:nth-child(2){
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .col-div:nth-child(2),
@@ -101,14 +95,8 @@ export default {
   align-items: center;
 }
 
-/* .col-div:nth-child(3){
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- */
 .col-div:nth-child(2) h3 {
-  font-size: 2em;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 2px;
 }

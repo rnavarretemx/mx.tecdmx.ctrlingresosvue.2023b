@@ -1,5 +1,5 @@
 <template>
-    <Header titulo_navbar="Datos de ingreso"></Header>
+    <!-- <Header titulo_navbar="Datos de ingreso"></Header> -->
     <b-container>
         <b-form>
             <b-row>
@@ -18,7 +18,7 @@
 </template>
     
 <script lang="ts">
-import Header from '../layout/Header.vue';
+/* import Header from '../layout/Header.vue'; */
 /* import { ref } from 'vue'; */
 import Sidebar from '../layout/Sidebar.vue'
 import title from "../components/title.vue"
@@ -41,7 +41,7 @@ export default{
         };
     },
     components:{
-        Header,
+        /* Header, */
         title,
         subtitle,
         input_text,

@@ -3,60 +3,60 @@
     <!-- <Sidebar></Sidebar> -->
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
-                <h5>El registro de su visita se ha generado con el siguiente c&oacute;digo QR.</h5>
-                <!-- {{"data: "+ data_o.message}} -->
-            </div>
+        <div class="subcontainer">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
+                    <h5>El registro de su visita se ha generado con el siguiente c&oacute;digo QR.</h5>
+                </div>
 
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center img_qr">
-                <!-- <img src="../../assets/qr-code.webp" alt=""> -->
-                <!-- <img src="http://localhost/resources/images/`${data.datos_ingreso.codigo_qr}`" alt=""> -->
-                <!-- <img src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/{data.datos_ingreso.codigo_qr}" alt=""> -->
-                <!-- <img alt="" :src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/`${data.datos_ingreso.codigo_qr}`"> -->
-<<<<<<< HEAD
-                <img :src="src_url+data.datos_ingreso.codigo_qr" alt=""> 
-=======
->>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
-                <h6>C&oacute;digo generado: <span>{{data.datos_ingreso.codigo}}</span></h6>
-            </div>
-        </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 text-center img_qr">
+                    <div>
+                        <img :src="ulr_img + data.datos_ingreso.codigo_qr" alt="">
+                    <br>
+                    <h6>C&oacute;digo generado: <span>{{ data.datos_ingreso.codigo }}</span></h6>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 text-center">
 
-        <div class="row text-center">
-            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
-                <h6>Nombre del visitante</h6>
-                <h6 class="txt_dato">
-                     {{ data.datos_visitante.nombre  }}
-                    </h6>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
-                <h6>Fecha y hora de la cita</h6>
-                <h6 class="txt_dato">{{data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada}}</h6>
-            </div>
-        </div>
+                    <div class="col-sm-6 col-md-6 col-lg-12 text-center">
+                        <h6>Nombre del visitante</h6>
+                        <h6 class="txt_dato">
+                            {{ data.datos_visitante.nombre }}
+                        </h6>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-12 text-center">
+                        <h6>Fecha y hora de la cita</h6>
+                        <h6 class="txt_dato">{{ data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada }}
+                        </h6>
+                    </div>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center div_botones">
-                <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center div_botones">
+                    <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
                     data-bs-target="#modal_equipo" type="button">¿Necesitas registrar
                     equipo de c&oacute;mputo?</button> -->
-                    <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">¿Necesitas registrar
-                    equipo de c&oacute;mputo?</b-button>
+                    <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">¿Necesitas
+                        registrar
+                        equipo de c&oacute;mputo?</b-button>
 
-                <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                    <!-- <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
                     data-bs-target="#modal_auto" type="button">¿Necesitas registrar
                     autom&oacute;vil?</button> -->
 
-                    <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">¿Necesitas registrar
+                    <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">¿Necesitas
+                        registrar
                         autom&oacute;vil?</b-button>
 
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                <button class="btn btn-outline-danger btn-lg col-lg-4" type="button" @click="descargarQR()">DESCARGAR QR</button>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <button class="btn btn-outline-danger btn-lg col-lg-4" type="button" @click="descargarQR()">DESCARGAR
+                        QR</button>
+                </div>
+
+                </div>
             </div>
         </div>
 
-        <br>
 
 
         <ModalEquipo></ModalEquipo>
@@ -78,76 +78,48 @@ var src_url = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images
 
 const props = defineProps({
     data: Object
-  
+
 });
 
-<<<<<<< HEAD
-=======
-/* const srcImage = ref("http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"+ props.data.datos_ingreso.codigo_qr)
-const getImg = computed(() => {
-  return srcImage.value
-}) */
+const ulr_img = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/";
 
 
-/*const route = useRoute();
-const ingreso = ref();
 
-const getData = async () => {
-    console.log(route.params);
-    ingreso.value = route.params;
-    console.log(ingreso);
-     console.log(route.params.data_); */
-    /* try {
-        const { data } = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
-        );
-        pokeSprite.value = data.sprites.front_default;
-    } catch (error) {
-        console.log(error);
-        pokeSprite.value = null;
-    } 
-};*/
-
-/* getData(); */
-/* onMounted(  () => {
-    console.log(route.name);
-    console.log(route.params.otro2);
-    console.log(route.params); */
-
-    /* console.log(JSON.parse(route.name)); */
-    /* console.log(JSON.parse(route.params.ingreso)); */
-    /* console.log(JSON.stringify(route.params.ingreso)); */
-    /* console.log(route.data_o); */
-    /* console.log(route.name);
-    console.log(route.params); */
-    /* $route.params.registro */
-    /* ingreso.value = route.params.registro;
-    console.log(ingreso); 
-});*/
-
->>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
-const descargarQR=():void => {
+const descargarQR = (): void => {
     router.push("/")
 }
 
 </script>
     
 <style scoped>
-
-.container{
-padding: 50px;
+.container {
+    padding: 50px;
 }
+
+.subcontainer {
+    border-radius: 20px;
+    background: #EFEDED;
+}
+
 .titulo_uno {
-    padding-top: 2em;
-    padding-bottom: 1em;
+    /* padding-top: 2em;
+    padding-bottom: 1em; */
+    padding: 25px;
 }
 
 .titulo_uno h3 {
-    font-size: 40px;
+    font-size: 30px;
+}
+
+.img_qr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img_qr img {
-    width: 12em;
+    width: 20em;
+    margin: 15px;
 }
 
 .div_botones {
@@ -161,5 +133,9 @@ padding: 50px;
 .txt_dato {
     font-weight: 400;
 }
+
+/* .row div {
+    border: solid 1px red;
+} */
 </style>
     
