@@ -12,7 +12,6 @@
 <script lang="ts" setup>
 import { ref, onBeforeMount } from "vue";
 import axios from "axios";
-import Header from '../layout/Header.vue';
 import FormRegistro from '../layout/registro/FormRegistro.vue';
 import DescargaQR from '../layout/registro/DescargaQR.vue';
 

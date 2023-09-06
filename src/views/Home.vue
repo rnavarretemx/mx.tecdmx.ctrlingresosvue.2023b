@@ -62,7 +62,7 @@ const onSubmit = async (e) => {
     align-items: center;
 }
 
-.subcontainer .sc_login{
+.sc_login{
      /* border: solid 1px blue; */
     background: #690061 !important;
     border-radius: 16px;
@@ -74,7 +74,7 @@ const onSubmit = async (e) => {
     /* border: solid 1px orange; */
 }
 
-.subcontainer .sc_login button{
+.sc_login button{
     width: 100%;
     font-weight: 700;
     letter-spacing: 1px;
