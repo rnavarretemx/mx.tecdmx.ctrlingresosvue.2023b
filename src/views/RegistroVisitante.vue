@@ -72,7 +72,7 @@ const onSubmit = async (e) => {
         console.log(JSON.stringify(data));
 
         if (data != null) {
-            alert("entro valid");
+            
             showForm.value = false;
             showQR.value = true;
         } else {

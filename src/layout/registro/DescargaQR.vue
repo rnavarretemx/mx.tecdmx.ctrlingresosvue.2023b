@@ -17,6 +17,7 @@
                 <!-- <img src="http://localhost/resources/images/`${data.datos_ingreso.codigo_qr}`" alt=""> -->
                 <!-- <img src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/{data.datos_ingreso.codigo_qr}" alt=""> -->
                 <!-- <img alt="" :src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/`${data.datos_ingreso.codigo_qr}`"> -->
+                <img :src="ulr_img+data.datos_ingreso.codigo_qr" alt="">
                 <h6>C&oacute;digo generado: <span>{{data.datos_ingreso.codigo}}</span></h6>
             </div>
         </div>
@@ -78,6 +79,8 @@ const props = defineProps({
     data: Object
   
 });
+
+const ulr_img = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/";
 
 /* const srcImage = ref("http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"+ props.data.datos_ingreso.codigo_qr)
 const getImg = computed(() => {
