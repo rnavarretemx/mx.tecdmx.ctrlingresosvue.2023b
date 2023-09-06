@@ -21,17 +21,18 @@ export default {
 const props = defineProps({
     block: Object,
 });
+
 const emit = defineEmits(['onSelectedDate'])
+
 const selectedDate = (e) => {
     emit('onSelectedDate',e);
-    /* alert(e); */
 }
+
 </script>
 
 <style scoped>
 div{
     margin-bottom: 10px;
-    /* border: solid 1px blue; */
 }
 div label{
     font-size: 14px;

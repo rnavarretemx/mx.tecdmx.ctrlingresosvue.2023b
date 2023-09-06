@@ -1,5 +1,5 @@
 <template>
-    <Header titulo_navbar="Visitas TECDMX"></Header>
+   <!--  <Header titulo_navbar="Visitas TECDMX"></Header> -->
     <!-- <Sidebar></Sidebar> -->
 
     <!--  <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
@@ -92,8 +92,8 @@
 </template>
 
 <script lang="ts" >
-import Header from '../layout/Header.vue';
-import Sidebar from '../layout/Sidebar.vue';
+/* import Header from '../layout/Header.vue';
+import Sidebar from '../layout/Sidebar.vue'; */
 import router from '@/router';
 import ModalRegistroVigilante from '../layout/ModalRegistroVigilante.vue';
 
@@ -106,7 +106,7 @@ export default{
       }
     },
     components: { 
-        Header, 
+        /* Header,  */
         ModalRegistroVigilante,
         BIconGearFill,
         BIconCodeSquare,
