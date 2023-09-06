@@ -46,10 +46,17 @@
                     <div class="col col-sm-12 col-md-12 col-lg-12 text-center div_botones">
 
                         <h6>¿Necesitas registrar tu equipo de c&oacute;mputo o autom&oacute;vil?</h6>
-                        <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">
+                        <!-- <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">
                             REGISTRAR EQUIPO</b-button>
 
-                        <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">REGISTRAR AUTOM&Oacute;VIL</b-button>
+                        <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">
+                            REGISTRAR AUTOM&Oacute;VIL</b-button> -->
+
+                            <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                    data-bs-target="#modal_equipo" type="button">REGISTRAR EQUIPO</button>
+
+                        <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                    data-bs-target="#modal_auto" type="button">REGISTRAR AUTOM&Oacute;VIL</button>
 
                         <button class="btn btn-outline-danger btn-lg col-lg-4" type="button"
                             @click="descargarQR()">DESCARGAR COMPROBANTE</button>
@@ -61,7 +68,7 @@
 
 
 
-        <ModalEquipo></ModalEquipo>
+        <ModalEquipo :data="data"></ModalEquipo>
         <ModalAutomovil></ModalAutomovil>
 
 
