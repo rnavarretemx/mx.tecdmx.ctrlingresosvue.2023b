@@ -1,5 +1,8 @@
 <template>
+<<<<<<< HEAD
 <!-- <Header titulo_navbar="Registro de ingreso"></Header> -->
+=======
+>>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
     <FormRegistro v-if="showForm" 
     @onSubmit="onSubmit" 
     @setDatePicker="setDatePicker" 
@@ -72,7 +75,11 @@ const onSubmit = async (e) => {
         console.log(JSON.stringify(data));
 
         if (data != null) {
+<<<<<<< HEAD
             
+=======
+            alert("entro valid");
+>>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
             showForm.value = false;
             showQR.value = true;
         } else {

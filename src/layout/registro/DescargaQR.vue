@@ -14,7 +14,10 @@
                 <!-- <img src="http://localhost/resources/images/`${data.datos_ingreso.codigo_qr}`" alt=""> -->
                 <!-- <img src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/{data.datos_ingreso.codigo_qr}" alt=""> -->
                 <!-- <img alt="" :src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/`${data.datos_ingreso.codigo_qr}`"> -->
+<<<<<<< HEAD
                 <img :src="src_url+data.datos_ingreso.codigo_qr" alt=""> 
+=======
+>>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
                 <h6>C&oacute;digo generado: <span>{{data.datos_ingreso.codigo}}</span></h6>
             </div>
         </div>
@@ -78,6 +81,51 @@ const props = defineProps({
   
 });
 
+<<<<<<< HEAD
+=======
+/* const srcImage = ref("http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"+ props.data.datos_ingreso.codigo_qr)
+const getImg = computed(() => {
+  return srcImage.value
+}) */
+
+
+/*const route = useRoute();
+const ingreso = ref();
+
+const getData = async () => {
+    console.log(route.params);
+    ingreso.value = route.params;
+    console.log(ingreso);
+     console.log(route.params.data_); */
+    /* try {
+        const { data } = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
+        );
+        pokeSprite.value = data.sprites.front_default;
+    } catch (error) {
+        console.log(error);
+        pokeSprite.value = null;
+    } 
+};*/
+
+/* getData(); */
+/* onMounted(  () => {
+    console.log(route.name);
+    console.log(route.params.otro2);
+    console.log(route.params); */
+
+    /* console.log(JSON.parse(route.name)); */
+    /* console.log(JSON.parse(route.params.ingreso)); */
+    /* console.log(JSON.stringify(route.params.ingreso)); */
+    /* console.log(route.data_o); */
+    /* console.log(route.name);
+    console.log(route.params); */
+    /* $route.params.registro */
+    /* ingreso.value = route.params.registro;
+    console.log(ingreso); 
+});*/
+
+>>>>>>> 676e29fa5d7e9fefea7503df123170e11fd5c2ca
 const descargarQR=():void => {
     router.push("/")
 }
