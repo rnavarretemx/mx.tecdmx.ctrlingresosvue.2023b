@@ -1,39 +1,39 @@
 <template>
-    <FormRegistro v-if="show" 
+<!-- <Header titulo_navbar="Registro de ingreso"></Header> -->
+    <FormRegistro v-if="showForm" 
     @onSubmit="onSubmit" 
     @setDatePicker="setDatePicker" 
     @setTimePicker="setTimePicker">
     </FormRegistro>
-    <DescargaQR v-if="!show"
+    <DescargaQR v-if="showQR"
     :data="ingreso"></DescargaQR>
+
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
 import axios from "axios";
+import Header from '../layout/Header.vue';
 import FormRegistro from '../layout/registro/FormRegistro.vue';
 import DescargaQR from '../layout/registro/DescargaQR.vue';
 
-var show = true;
+var showForm = ref(true);
+var showQR = ref(false);
 var fecha_select = "";
 var hora_select = "";
  const ingreso = ref();
 
 const setDatePicker = (e) => {
     fecha_select = e;
-    /*  alert(fecha_select); */
-
 }
 
 const setTimePicker = (e) => {
     hora_select = e;
-    /* alert(hora_select); */
 
 }
 
 const onSubmit = async (e) => {
     e.preventDefault();
-    
 
     /* change to v-model */
     var c_nombre = document.getElementById("txt_nombre");
@@ -67,21 +67,18 @@ const onSubmit = async (e) => {
          console.log(c_fecha);
          console.log(c_hora); */
 
-
-
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
         ingreso.value = data;
         console.log(JSON.stringify(data));
 
         if (data != null) {
-            show = false;
+            
+            showForm.value = false;
+            showQR.value = true;
         } else {
-            show = true;
+            showForm.value = true;
+            showQR.value = false;
         }
-
-        /* alert(show); */
-
-
 
     } catch (error) {
         console.log(error);

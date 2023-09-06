@@ -52,8 +52,8 @@
         <br>
 
 
-        <ModalEquipo></ModalEquipo>
-        <ModalAutomovil></ModalAutomovil>
+        <!-- <ModalEquipo></ModalEquipo>
+        <ModalAutomovil></ModalAutomovil> -->
 
 
     </div>
@@ -62,8 +62,8 @@
 <script lang="ts" setup>
 import Header from '../layout/Header.vue';
 /* import Sidebar from '../layout/Sidebar.vue'; */
-import ModalEquipo from '../layout/ModalEquipo.vue';
-import ModalAutomovil from '../layout/ModalAutomovil.vue';
+/* import ModalEquipo from '../layout/ModalEquipo.vue';
+import ModalAutomovil from '../layout/ModalAutomovil.vue'; */
 import { ref, onBeforeMount, onMounted } from "vue";
 import router from '@/router';
 import { useRoute, useRouter } from "vue-router";

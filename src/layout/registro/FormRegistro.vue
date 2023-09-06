@@ -1,5 +1,5 @@
 <template>
-    <Header titulo_navbar="Registro de ingreso"></Header>
+    <!-- <Header titulo_navbar="Registro de ingreso"></Header> -->
     <b-container>
         <b-form @submit.prevent="onSubmit">
             <b-row>

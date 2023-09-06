@@ -5,12 +5,13 @@
     <!-- <DescargarQR></DescargarQR> -->
     <!-- <DatosRegistro></DatosRegistro> -->
     <!-- <RegistroCitas></RegistroCitas> -->
+    <Header></Header>
     <router-view></router-view>
 </template>
 
 <script lang="ts" setup>
 
-/* import Header from './layout/Header.vue'; */
+import Header from './layout/Header.vue';
 import FormRegistro from './views/FormRegistro.vue';
 import DatosRegistro from './views/DatosRegistro.vue';
 import DescargarQR from './views/DescargaQR.vue';

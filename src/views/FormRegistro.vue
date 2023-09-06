@@ -1,5 +1,5 @@
 <template>
-    <Header titulo_navbar="Registro de ingreso"></Header>
+    <!-- <Header titulo_navbar="Registro de ingreso"></Header> -->
     <b-container>
         <b-form @submit.prevent="onSubmit">
             <b-row>
@@ -8,7 +8,6 @@
                         @onSelectedItem="changeSelectedItem"
                         @onSelectedDate="setDatePicker"
                         @onSelectedTime="setTimePicker"></component>
-                    <!-- {{ txt_areapiso}} :txt_model="json_data.id"-->
                 </template>
             </b-row>
         </b-form>

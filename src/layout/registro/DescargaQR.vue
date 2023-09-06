@@ -6,15 +6,16 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
                 <h5>El registro de su visita se ha generado con el siguiente c&oacute;digo QR.</h5>
-            
                 <!-- {{"data: "+ data_o.message}} -->
-               
-
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 text-center img_qr">
-                <img src="../../assets/qr-code.webp" alt="">
-                <h6>C&oacute;digo generado: <span>6876aomfj897345sdfk125</span></h6>
+                <!-- <img src="../../assets/qr-code.webp" alt=""> -->
+                <!-- <img src="http://localhost/resources/images/`${data.datos_ingreso.codigo_qr}`" alt=""> -->
+                <!-- <img src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/{data.datos_ingreso.codigo_qr}" alt=""> -->
+                <!-- <img alt="" :src="http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/`${data.datos_ingreso.codigo_qr}`"> -->
+                <img :src="src_url+data.datos_ingreso.codigo_qr" alt=""> 
+                <h6>C&oacute;digo generado: <span>{{data.datos_ingreso.codigo}}</span></h6>
             </div>
         </div>
 
@@ -22,12 +23,12 @@
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
                 <h6>Nombre del visitante</h6>
                 <h6 class="txt_dato">
-                     {{ data  }}
+                     {{ data.datos_visitante.nombre  }}
                     </h6>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
                 <h6>Fecha y hora de la cita</h6>
-                <h6 class="txt_dato">26/08/2023</h6>
+                <h6 class="txt_dato">{{data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada}}</h6>
             </div>
         </div>
 
@@ -63,57 +64,19 @@
 </template>
     
 <script lang="ts" setup>
-/* import Header from '../layout/Header.vue'; */
-/* import Sidebar from '../layout/Sidebar.vue'; */
-import ModalEquipo from '../../layout/ModalEquipo.vue';
-import ModalAutomovil from '../../layout/ModalAutomovil.vue';
-import { ref, onBeforeMount, onMounted } from "vue";
+import ModalEquipo from './ModalEquipo.vue';
+import ModalAutomovil from './ModalAutomovil.vue';
+
+import { ref } from "vue";
 import router from '@/router';
 import { useRoute, useRouter } from "vue-router";
+
+var src_url = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/";
 
 const props = defineProps({
     data: Object
   
 });
-
-
-
-
-/*const route = useRoute();
-const ingreso = ref();
-
-const getData = async () => {
-    console.log(route.params);
-    ingreso.value = route.params;
-    console.log(ingreso);
-     console.log(route.params.data_); */
-    /* try {
-        const { data } = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
-        );
-        pokeSprite.value = data.sprites.front_default;
-    } catch (error) {
-        console.log(error);
-        pokeSprite.value = null;
-    } 
-};*/
-
-/* getData(); */
-/* onMounted(  () => {
-    console.log(route.name);
-    console.log(route.params.otro2);
-    console.log(route.params); */
-
-    /* console.log(JSON.parse(route.name)); */
-    /* console.log(JSON.parse(route.params.ingreso)); */
-    /* console.log(JSON.stringify(route.params.ingreso)); */
-    /* console.log(route.data_o); */
-    /* console.log(route.name);
-    console.log(route.params); */
-    /* $route.params.registro */
-    /* ingreso.value = route.params.registro;
-    console.log(ingreso); 
-});*/
 
 const descargarQR=():void => {
     router.push("/")
