@@ -10,9 +10,12 @@
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-6 text-center img_qr">
-                    <img :src="ulr_img + data.datos_ingreso.codigo_qr" alt="">
+                    <div>
+                        <img :src="ulr_img + data.datos_ingreso.codigo_qr" alt="">
                     <br>
                     <h6>C&oacute;digo generado: <span>{{ data.datos_ingreso.codigo }}</span></h6>
+                    </div>
+                    
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 text-center">
 
@@ -98,16 +101,24 @@ const descargarQR = (): void => {
 }
 
 .titulo_uno {
-    padding-top: 2em;
-    padding-bottom: 1em;
+    /* padding-top: 2em;
+    padding-bottom: 1em; */
+    padding: 25px;
 }
 
 .titulo_uno h3 {
-    font-size: 40px;
+    font-size: 30px;
+}
+
+.img_qr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img_qr img {
-    width: 12em;
+    width: 20em;
+    margin: 15px;
 }
 
 .div_botones {
@@ -122,8 +133,8 @@ const descargarQR = (): void => {
     font-weight: 400;
 }
 
-.row div {
+/* .row div {
     border: solid 1px red;
-}
+} */
 </style>
     
