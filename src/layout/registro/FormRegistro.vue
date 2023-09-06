@@ -26,8 +26,8 @@ import form_registro from "../../json/form_registro.json";
 import { components } from '../../composables/components';
 const { setSelectedComponent } = components();
 
-var fecha_select = "";
-var hora_select = "";
+/* var fecha_select = "";
+var hora_select = ""; */
 let txt_areapiso = ref("");
 let txt_extension = ref("");
 var j_data = ref([]);

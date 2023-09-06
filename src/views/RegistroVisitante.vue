@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import axios from "axios";
 import FormRegistro from '../layout/registro/FormRegistro.vue';
 import DescargaQR from '../layout/registro/DescargaQR.vue';
@@ -22,13 +22,11 @@ var hora_select = "";
 
 const setDatePicker = (e) => {
     fecha_select = e;
-    /*  alert(fecha_select); */
 
 }
 
 const setTimePicker = (e) => {
     hora_select = e;
-    /* alert(hora_select); */
 
 }
 
@@ -59,13 +57,6 @@ const onSubmit = async (e) => {
         formData.append('fecha', c_fecha);
         formData.append('hora_agendada', c_hora);
 
-        /*  console.log(c_nombre.value + " " + c_paterno.value + " " + c_materno.value);
-         console.log(c_procedencia.value);
-         console.log(c_asunto.value);
-         console.log(c_contacto.value);
-         console.log(c_personal.value);
-         console.log(c_fecha);
-         console.log(c_hora); */
 
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
         ingreso.value = data;
@@ -84,6 +75,16 @@ const onSubmit = async (e) => {
         console.log(error);
     }
 
+}
+
+const emit = defineEmits(['getEncabezado']);
+
+onBeforeMount(() => {
+    setEncabezado("Registro de cita");
+});
+
+const setEncabezado = (etq) => {
+    emit('getEncabezado',etq);
 }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <h1>hola</h1>
+    <h6>Sistema para el control de visitas del TECDMX.</h6>
 </template>
 
 <script lang="ts" setup>
