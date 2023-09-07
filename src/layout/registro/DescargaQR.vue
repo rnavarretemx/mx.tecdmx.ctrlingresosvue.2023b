@@ -8,7 +8,7 @@
                 <div class="col col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
                     <h5>El registro de su visita se ha generado con la siguiente información.</h5>
                 </div>
-<!-- c&oacute;digo QR. -->
+                <!-- c&oacute;digo QR. -->
                 <div class="row col-lg-6 text-center img_qr">
 
                     <div class="col col-sm-12 col-md-12 col-lg-12">
@@ -52,15 +52,15 @@
                         <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">
                             REGISTRAR AUTOM&Oacute;VIL</b-button> -->
 
-                            <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
-                    data-bs-target="#modal_equipo" type="button">REGISTRAR EQUIPO</button>
+                        <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                            data-bs-target="#modal_equipo" type="button">REGISTRAR EQUIPO</button>
 
                         <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
-                    data-bs-target="#modal_auto" type="button">REGISTRAR AUTOM&Oacute;VIL</button>
+                            data-bs-target="#modal_auto" type="button">REGISTRAR AUTOM&Oacute;VIL</button>
 
                         <button class="btn btn-outline-danger btn-lg col-lg-4" type="button"
                             @click="descargarQR()">DESCARGAR COMPROBANTE</button>
-                    </div> 
+                    </div>
 
                 </div>
             </div>
@@ -82,8 +82,10 @@ import ModalAutomovil from './ModalAutomovil.vue';
 import { ref } from "vue";
 import router from '@/router';
 import { useRoute, useRouter } from "vue-router";
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import download from 'downloadjs'
 
-var src_url = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/";
+/* var src_url = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"; */
 
 const props = defineProps({
     data: Object
@@ -94,9 +96,29 @@ const ulr_img = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/imag
 
 
 
-const descargarQR = (): void => {
-    /* router.push("/") */
-    alert("descargando comprobante...");
+const descargarQR = async () => {
+
+    const pngUrl = ulr_img + props.data.datos_ingreso.codigo_qr;
+    const pngImageBytes = await fetch(pngUrl).then((res) => res.arrayBuffer())
+    const pdfDoc = await PDFDocument.create()
+    const pngImage = await pdfDoc.embedPng(pngImageBytes)
+    const pngDims = pngImage.scale(0.8)
+
+    const page = pdfDoc.addPage()
+    /* page.drawText('Datos para el ingreso a las instalaciones del TECDMX', 
+    { x: 50, 
+      y: 200, 
+      size: 14 }) */
+
+    page.drawImage(pngImage, {
+        x: page.getWidth() / 2 - pngDims.width / 2 ,
+        y: page.getHeight() / 2 - pngDims.height + 200,
+        width: pngDims.width,
+        height: pngDims.height,
+    })
+    const pdfBytes = await pdfDoc.save()
+    download(pdfBytes, (props.data.datos_ingreso.codigo+".pdf"), "application/pdf");
+
 }
 
 </script>
@@ -110,6 +132,7 @@ const descargarQR = (): void => {
     justify-content: center;
     align-items: center;
 }
+
 .sc_qr {
     border-radius: 20px;
     background: #EFEDED;
@@ -154,7 +177,7 @@ const descargarQR = (): void => {
     font-weight: 400;
 }
 
-.d_datos{
+.d_datos {
     margin-top: 20px;
     margin-bottom: 20px;
 }
