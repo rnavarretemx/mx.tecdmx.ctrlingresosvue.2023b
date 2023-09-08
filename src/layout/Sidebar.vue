@@ -11,7 +11,7 @@
         <div class="offcanvas-body">
             <button type="button" class="btn btn-outline-light" @click="navegaVigilancia">
                 <i class="bi bi-calendar-event"></i> Citas </button>
-            <button type="button" class="btn btn-outline-light"> <i class="bi bi-calendar3"></i> Calendario</button>
+            <!-- <button type="button" class="btn btn-outline-light"> <i class="bi bi-calendar3"></i> Calendario</button> -->
             <button type="button" class="btn btn-outline-light" @click="navegaRegistro()">
                 <i class="bi bi-calendar"></i> Registro cita</button>
         </div>

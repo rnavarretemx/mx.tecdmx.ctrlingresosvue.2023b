@@ -3,9 +3,9 @@ import App from './App.vue'
 
 import { createRouter, createWebHistory } from "vue-router"
 import Home from './views/Home.vue';
-import DatosRegistro from './views/DatosRegistro.vue';
-import RegistroCitas from './views/RegistroCitas.vue';
+
 import RegistroVisitante from './views/RegistroVisitante.vue'
+import ConsultaCitas from './views/ConsultaCitas.vue'
 
 
 const routeInfos = [
@@ -19,14 +19,9 @@ const routeInfos = [
     component: RegistroVisitante,
   },
   {
-    path: "/cita",
-    name: "cita",
-    component: DatosRegistro,
-  },
-  {
     path: "/agenda",
     name: "agenda",
-    component: RegistroCitas,
+    component: ConsultaCitas,
   },
 ]
 

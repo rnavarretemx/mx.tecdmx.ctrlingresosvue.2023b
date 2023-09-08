@@ -23,7 +23,6 @@ var hora_select = "";
 
 const setDatePicker = (e) => {
     fecha_select = e;
-
 }
 
 const setTimePicker = (e) => {
@@ -64,9 +63,10 @@ const onSubmit = async (e) => {
         console.log(JSON.stringify(data));
 
         if (data != null) {
-            
+
             showForm.value = false;
             showQR.value = true;
+
         } else {
             showForm.value = true;
             showQR.value = false;
