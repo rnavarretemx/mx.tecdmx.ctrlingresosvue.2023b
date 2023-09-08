@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-2 col-sm-2 col-md-6 col-lg-6">
                 <!-- <button v-b-modal.modal-vigilante type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
                     data-bs-target="#modal_registro_vigilante" ><i class="bi bi-person-add"></i></button> -->
 
@@ -11,7 +11,7 @@
 
             </div>
             <!-- <b-button variant="outline-primary"><b-icon icon="person"></b-icon> Settings</b-button> -->
-            <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-10 col-sm-10 col-md-6 col-lg-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
                         <i class="bi bi-qr-code-scan"> </i>
