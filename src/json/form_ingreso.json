@@ -1,32 +1,22 @@
 {
     "body": [
         {
+            "id": "txt_subtitle2",
+            "component": "subtitle",
+            "label": "Datos del visitante",
+            "sm": "12",
+            "md": "12",
+            "lg": "12"
+        },
+        {
             "id": "txt_nombre",
             "component": "input_text",
             "label": "Nombre",
             "placeholder": "Jhon",
-            "disabled": "disabled",
-            "sm": "12",
-            "md": "6",
-            "lg": "4"
-        },
-        {
-            "id": "txt_paterno",
-            "component": "input_text",
-            "label": "Apellido Paterno",
-            "placeholder": "Doe",
-            "sm": "12",
-            "md": "6",
-            "lg": "4"
-        },
-        {
-            "id": "txt_materno",
-            "component": "input_text",
-            "label": "Apellido Materno",
-            "placeholder": "Opcional",
+            "disabled": true,
             "sm": "12",
             "md": "12",
-            "lg": "4"
+            "lg": "12"
         },
         {
             "id": "txt_subtitle2",
@@ -41,6 +31,7 @@
             "component": "input_text",
             "label": "Procedencia",
             "placeholder": "Organización o Instituto",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -50,6 +41,7 @@
             "component": "input_text",
             "label": "Asunto",
             "placeholder": "-",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -59,6 +51,7 @@
             "component": "input_text",
             "label": "Contacto",
             "placeholder": "5526548974",
+            "disabled": true,
             "sm": "12",
             "md": "12",
             "lg": "4"
@@ -67,6 +60,7 @@
             "id": "txt_subtitle3",
             "component": "subtitle",
             "label": "Datos del personal que recibe la visita",
+            "disabled": true,
             "sm": "12",
             "md": "12",
             "lg": "12"
@@ -76,6 +70,7 @@
             "component": "input_text",
             "label": "¿A quién visita?",
             "placeholder": "Lic. Jhon Doe ",
+            "disabled": true,
             "options": [],
             "sm": "12",
             "md": "6",
@@ -86,6 +81,7 @@
             "component": "input_text",
             "label": "Área o piso",
             "placeholder": "4N - Unidad de Servicios Informáticos",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "4"
@@ -95,6 +91,7 @@
             "component": "input_text",
             "label": "Extensión",
             "placeholder": "1172",
+            "disabled": true,
             "sm": "12",
             "md": "12",
             "lg": "4"
@@ -102,8 +99,9 @@
         {
             "id": "txt_fecha",
             "component": "input_text",
-            "label": "Fechas disponible",
+            "label": "Fechas de la cita",
             "placeholder": "20/08/2023",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "6"
@@ -111,8 +109,9 @@
         {
             "id": "txt_hora",
             "component": "input_text",
-            "label": "Horas disponibles",
+            "label": "Hora",
             "placeholder": "09:00",
+            "disabled": true,
             "sm": "12",
             "md": "6",
             "lg": "6"

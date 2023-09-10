@@ -40,7 +40,6 @@ onBeforeMount(() => {
     getData();
 });
 
-
 const changeSelectedItem = (e) => {
     /* Realizar la inserción de los datos con v-model */
     var dato_personal = arrOptions.find(o => o.value == e);

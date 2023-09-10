@@ -4,7 +4,7 @@
     @setDatePicker="setDatePicker" 
     @setTimePicker="setTimePicker">
     </FormRegistro>
-    <DescargaQR v-if="showQR"
+    <DescargaQR v-else
     :data="ingreso"></DescargaQR>
 
 </template>
@@ -27,7 +27,6 @@ const setDatePicker = (e) => {
 
 const setTimePicker = (e) => {
     hora_select = e;
-
 }
 
 const onSubmit = async (e) => {

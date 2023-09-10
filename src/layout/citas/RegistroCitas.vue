@@ -16,18 +16,19 @@
                     <span class="input-group-text" id="basic-addon1">
                         <i class="bi bi-qr-code-scan"> </i>
                         <!-- <b-icon icon="code-square" ></b-icon> -->
-
                     </span>
                     <input type="text" class="form-control" placeholder="C&oacute;digo de la cita"
-                        aria-label="C&oacute;digo QR" aria-describedby="basic-addon1">
+                        @keyup.enter="getBusquedaCodigo($event)" @change="getBusquedaCodigo($event)" aria-label="C&oacute;digo QR"
+                        aria-describedby="basic-addon1">
                 </div>
 
             </div>
         </div>
         <br>
-        
+
         <div class="row">
-            <b-pagination v-if="!showNoData" align="center"  :total-rows="ingreso.length" v-model="paginaActual"  :per-page="itemsPorPagina" > </b-pagination>
+            <b-pagination v-if="!showNoData" align="center" :total-rows="ingreso.length" v-model="paginaActual"
+                :per-page="itemsPorPagina"> </b-pagination>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -42,21 +43,20 @@
                     <tr v-if="showNoData" class="center_table">
                         <th colspan="5">NO EXISTEN REGISTROS</th>
                     </tr>
-                    
-                    <tr v-else v-for="(i,index) in paginador(ingreso)" v-bind:key="index" >
+
+                    <tr v-else v-for="(i, index) in paginador(ingreso)" v-bind:key="index">
                         <th scope="row">{{ index + 1 }}</th>
-                        <td>{{i.visitante.nombre}}</td>
-                        <td>{{i.personal.nombre}}</td>
-                        <td>{{i.fecha_cita +" - " + i.hora_agendada}}</td>
+                        <td>{{ i.visitante.nombre }}</td>
+                        <td>{{ i.personal.nombre }}</td>
+                        <td>{{ i.fecha_cita + " - " + i.hora_agendada }}</td>
                         <td>
-                            
-                            <b-button @click="verRegistroCita(i.codigo)" variant="outline-secondary" :sm="12" :md="12" :lg="5">
+
+                            <b-button @click="verRegistroCita(i.codigo)" variant="outline-secondary" :sm="12" :md="12"
+                                :lg="5">
                                 <i class="bi bi-eye-fill"></i>
                             </b-button>
                         </td>
                     </tr>
-                    <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-eye-fill"></i></button> -->
-
                 </tbody>
             </table>
         </div>
@@ -109,6 +109,12 @@ const paginador = (ingreso) => {
             : indiceInicio + itemsPorPagina;
     console.log(indiceInicio + " " + indiceFinal);
     return ingreso.slice(indiceInicio, indiceFinal);
+}
+
+const emit = defineEmits(['getBusquedaCodigo']);
+const getBusquedaCodigo = (codigo) => {
+    /* console.log(codigo.target.value); */
+    emit('getBusquedaCodigo', codigo);
 }
 
 
