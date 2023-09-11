@@ -1,0 +1,203 @@
+    
+    /* Montserrat */
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 100;
+        src: url('./Montserrat/Montserrat-Thin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 200;
+        src: url('./Montserrat/Montserrat-ExtraLight.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        src: url('./Montserrat/Montserrat-Light.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./Montserrat/Montserrat-Regular.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        src: url('./Montserrat/Montserrat-Medium.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        src: url('./Montserrat/Montserrat-SemiBold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: url('./Montserrat/Montserrat-Bold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        src: url('./Montserrat/Montserrat-ExtraBold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        src: url('./Montserrat/Montserrat-Black.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+	
+	
+    /* Open Sans */
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url('./OpenSans/OpenSans-Light.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('./OpenSans/OpenSans-Regular.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('./OpenSans/OpenSans-SemiBold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('./OpenSans/OpenSans-Bold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    
+    @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url('./OpenSans/OpenSans-ExtraBold.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+	
+	
+	/*Poppins*/
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 100;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Thin.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 200;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-ExtraLight.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 300;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Light.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 400;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Regular.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 500;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Medium.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 600;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-SemiBold.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 700;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Bold.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 800;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-ExtraBold.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 900;
+	  font-display: swap;
+	  src: url('./Poppins/Poppins-Black.woff2') format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
