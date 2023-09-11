@@ -16,4 +16,11 @@ const setEncabezado = (etq) => {
 
 </script>
 
-<style></style>
+<style>
+
+*{
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+</style>

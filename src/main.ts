@@ -8,6 +8,9 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 import "bootstrap-icons/font/bootstrap-icons.css"
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import "../src/assets/fonts/fonts.css"
+
 /* import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue-icons.min.js'
 import { BootstrapIconsPlugin } from 'bootstrap-icons-vue'; */
