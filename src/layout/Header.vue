@@ -2,10 +2,10 @@
   <b-navbar>
     <b-row class="w-100">
 
-      <b-col sm="12" md="5" lg="3" class="col-div">
+      <b-col cols="6" sm="6" md="5" lg="3" class="col-div">
 
-        <b-navbar-brand>
-          <img class="img_tecdmx" src="../assets/tribunal_logo.png" alt="">
+        <b-navbar-brand >
+          <img class="img_tecdmx" src="../assets/images/tribunal_logo.png" alt="" @click="routerInicioSesion()">
         </b-navbar-brand>
         <div>
           <button class="btn" type="button" data-bs-toggle="offcanvas"
@@ -17,7 +17,7 @@
 
       </b-col>
 
-      <b-col cols="12" sm="12" md="7" lg="9" class="col-div">
+      <b-col cols="6" sm="6" md="7" lg="9" class="col-div">
 
         <h3> {{ encabezado }}</h3>
 
@@ -39,11 +39,16 @@
 
 <script lang="ts" setup>
 import Sidebar from '../layout/Sidebar.vue';
-
+import router from '@/router';
 const props = defineProps({
   encabezado: String
 
 });
+
+const routerInicioSesion = (): void  => {
+  router.push("/")
+}
+
 
 </script>
   
@@ -54,7 +59,8 @@ const props = defineProps({
 }
 
 .navbar {
-  background: #eceff1 !important;
+  /* background: #eceff1 !important; */
+  background: #690061 !important;
   padding: 0 !important;
 }
 
@@ -70,7 +76,7 @@ const props = defineProps({
 
 .col-div:first-child {
   padding: 10px !important;
-  background: #690061;
+  /* background: #690061; */
   text-align: center;
   display: flex;
 
@@ -87,8 +93,7 @@ const props = defineProps({
   align-items: center;
 }
 
-.col-div:nth-child(2),
-.col-div:nth-child(3) {
+.col-div:nth-child(2) {
   padding: 16px !important;
   display: flex;
   justify-content: center;
@@ -99,11 +104,23 @@ const props = defineProps({
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: white;
 }
 
 .navbar-brand img {
   height: 100%;
   width: 135px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+  .col-div:nth-child(2) h3 {
+    font-size: 18px;
+  }
+
+  .navbar-brand img {
+  width: 90px;
+}
 }
 </style>
   

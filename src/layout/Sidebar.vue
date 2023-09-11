@@ -3,7 +3,7 @@
         aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
             <div class="img_tecdmx">
-                <img src="../assets/tribunal_logo.png" alt="">
+                <img src="../assets/images/tribunal_logo.png" alt="">
             </div>
 
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
