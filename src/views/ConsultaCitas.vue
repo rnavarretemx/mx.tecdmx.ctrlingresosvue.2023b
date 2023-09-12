@@ -23,9 +23,9 @@ const setEncabezado = (etq) => {
 
 const getBusquedaCodigo = async (codigo_qr) => {
 
-const codigo = codigo_qr.target.value;
+/* const codigo = codigo_qr.target.value; */
 
-const url = ("http://127.0.0.1:8000/api/ingresos/read/"+codigo);
+const url = ("http://127.0.0.1:8000/api/ingresos/read/"+codigo_qr);
 
     try {
         const { data } = await axios.get(url);

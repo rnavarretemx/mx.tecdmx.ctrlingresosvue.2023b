@@ -3,6 +3,7 @@
         <div class="input_text">
             <label :for="`${block.id}`"> {{ block.label }} </label>
             <b-form-input 
+            :type="block.type"
             :placeholder="`${block.placeholder}`" 
             :id="`${block.id}`" 
             :required=block.required

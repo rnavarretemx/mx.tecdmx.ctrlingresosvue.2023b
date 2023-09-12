@@ -1,12 +1,7 @@
 <template>
-    <FormRegistro v-if="showForm" 
-    @onSubmit="onSubmit" 
-    @setDatePicker="setDatePicker" 
-    @setTimePicker="setTimePicker">
+    <FormRegistro v-if="show" @onSubmit="onSubmit" @setDatePicker="setDatePicker" @setTimePicker="setTimePicker">
     </FormRegistro>
-    <DescargaQR v-else
-    :data="ingreso"></DescargaQR>
-
+    <DescargaQR v-else :data="ingreso"></DescargaQR>
 </template>
 
 <script lang="ts" setup>
@@ -14,12 +9,13 @@ import { ref, onBeforeMount } from "vue";
 import axios from "axios";
 import FormRegistro from '../layout/registro/FormRegistro.vue';
 import DescargaQR from '../layout/registro/DescargaQR.vue';
+import { services } from '../composables/services';
+const { post, response, error } = services();
 
-var showForm = ref(true);
-var showQR = ref(false);
+var show = ref(true);
 var fecha_select = "";
 var hora_select = "";
- const ingreso = ref();
+const ingreso = ref();
 
 const setDatePicker = (e) => {
     fecha_select = e;
@@ -40,10 +36,9 @@ const onSubmit = async (e) => {
     var c_asunto = document.getElementById("txt_asunto");
     var c_contacto = document.getElementById("txt_contacto");
     var c_personal = document.getElementById("txt_personal_input");
-    /* var c_fecha = document.getElementById("txt_fecha"); */
     var c_fecha = fecha_select;
     var c_hora = hora_select;
-   
+
 
     try {
 
@@ -57,18 +52,18 @@ const onSubmit = async (e) => {
         formData.append('hora_agendada', c_hora);
 
 
-        const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/create', formData);
-        ingreso.value = data;
-        console.log(JSON.stringify(data));
+        const URL_API = "http://127.0.0.1:8000/api/ingresos/create";
+        await post(URL_API, formData);
+        const array_response: any = JSON.parse(JSON.stringify(response.value));
+        ingreso.value = array_response;
 
-        if (data != null) {
+        if (array_response.status == "success") {
 
-            showForm.value = false;
-            showQR.value = true;
+            show.value = false;
 
         } else {
-            showForm.value = true;
-            showQR.value = false;
+            show.value = true;
+            alert("Lo sentimos algo salió mal: " + error)
         }
 
     } catch (error) {
@@ -84,7 +79,7 @@ onBeforeMount(() => {
 });
 
 const setEncabezado = (etq) => {
-    emit('getEncabezado',etq);
+    emit('getEncabezado', etq);
 }
 
 </script>

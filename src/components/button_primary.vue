@@ -1,7 +1,8 @@
 <template>
     <b-col :sm="`${block.sm}`" :md="`${block.md}`" :lg="`${block.lg}`">
         <div class="button_primary">
-            <b-button size="lg" variant="outline-primary" :type="block.type" >{{ block.label }}</b-button>
+            <!-- <b-button size="lg" :type="block.type" >{{ block.label }}</b-button> -->
+            <button :type="block.type" class="btn btn-primary btn_guardar">{{ block.label }}</button>
         </div>
     </b-col>
 </template>
@@ -18,9 +19,7 @@ export default {
 
 <style scoped>
 .button_primary {
-    /* border: solid 1px red; */
     text-align: center;
-   /*  margin-bottom: 10px; */
 }
 
 .button_primary button{

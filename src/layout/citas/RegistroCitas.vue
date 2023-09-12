@@ -1,13 +1,15 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-2 col-sm-2 col-md-6 col-lg-6">
-                <!-- <button v-b-modal.modal-vigilante type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                    data-bs-target="#modal_registro_vigilante" ><i class="bi bi-person-add"></i></button> -->
+    <div class="container c_agenda">
 
-                <b-button variant="outline-secondary" v-b-modal.modal-vigilante :sm="12" :md="12" :lg="5">
-                    <!-- <b-icon icon="person"></b-icon> --><i class="bi bi-person-add"></i>
-                </b-button>
+        <div class="subcontainer sc_agenda">
+            <div class="row">
+            <div class="col-2 col-sm-2 col-md-6 col-lg-6">
+                <button v-b-modal.modal-vigilante type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#modal_registro_vigilante" ><i class="bi bi-person-add"></i></button>
+
+                <!-- <b-button variant="outline-secondary" v-b-modal.modal-vigilante :sm="12" :md="12" :lg="5">
+                <i class="bi bi-person-add"></i></b-button> -->
+                <!-- <b-icon icon="person"></b-icon> -->
 
             </div>
             <!-- <b-button variant="outline-primary"><b-icon icon="person"></b-icon> Settings</b-button> -->
@@ -26,7 +28,7 @@
         </div>
         <br>
 
-        <div class="row">
+        <div class="row table-responsive">
             <b-pagination v-if="!showNoData" align="center" :total-rows="ingreso.length" v-model="paginaActual"
                 :per-page="itemsPorPagina"> </b-pagination>
             <table class="table table-striped">
@@ -48,7 +50,7 @@
                         <th scope="row">{{ index + 1 }}</th>
                         <td>{{ i.visitante.nombre }}</td>
                         <td>{{ i.personal.nombre }}</td>
-                        <td>{{ i.fecha_cita + " - " + i.hora_agendada }}</td>
+                        <td>{{ i.fecha_cita + " | " + i.hora_agendada }}</td>
                         <td>
 
                             <b-button @click="verRegistroCita(i.codigo)" variant="outline-secondary" :sm="12" :md="12"
@@ -60,6 +62,8 @@
                 </tbody>
             </table>
         </div>
+        </div>
+        
     </div>
 
     <ModalRegistroVigilante></ModalRegistroVigilante>
@@ -79,9 +83,7 @@ onBeforeMount(() => {
     getData();
 });
 
-const verRegistroCita = (codigo) => {
-    alert("Cargando información... " + codigo);
-}
+
 
 const getData = async () => {
 
@@ -114,7 +116,11 @@ const paginador = (ingreso) => {
 const emit = defineEmits(['getBusquedaCodigo']);
 const getBusquedaCodigo = (codigo) => {
     /* console.log(codigo.target.value); */
-    emit('getBusquedaCodigo', codigo);
+    emit('getBusquedaCodigo', codigo.target.value);
+}
+const verRegistroCita = (codigo) => {
+    /* alert("Cargando información... " + codigo);*/
+    emit('getBusquedaCodigo', codigo); 
 }
 
 
@@ -122,8 +128,16 @@ const getBusquedaCodigo = (codigo) => {
 </script>
 
 <style scoped>
-.container {
+.c_agenda {
     padding: 50px;
+    /* border: solid 1px red; */
+}
+
+.sc_agenda{
+    padding: 35px;
+    border-radius: 20px;
+    background: #EFEDED;
+    border: solid 3px #690061;
 }
 
 .titulo_uno {

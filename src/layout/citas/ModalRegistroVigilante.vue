@@ -1,6 +1,6 @@
 <template>
     <!-- Modales Equipo -->
-    <!-- <div class="modal fade" id="modal_registro_vigilante" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="modal_registro_vigilante" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -20,10 +20,12 @@
                             <input type="text" class="form-control" id="txt_paterno" placeholder="Cargo">
                         </div>
                         <br>
-                        <div class="col-lg-12">
+
+                        <!-- <div class="col-lg-12">
                             <label for="txt_materno" class="form-label">C&oacute;digo de confirmaci&oacute;n</label>
                             <input type="text" class="form-control" id="txt_materno" placeholder="2589458">
-                        </div>
+                        </div> -->
+
                     </div>
 
                     <br>
@@ -39,15 +41,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
                     <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <b-modal id="modal-vigilante" centered title="Vigilancia">
-        <!-- <p class="my-4">Vertically centered modal!</p> -->
+    <!-- <p class="my-4">Vertically centered modal!</p> -->
+    <!-- <b-modal id="modal-vigilante" centered title="Vigilancia">
         <div class="row">
             <div class="col-lg-6">
                 <label for="txt_nombre" class="form-label">Nombre</label>
@@ -75,7 +77,7 @@
                 <input type="text" class="form-control" id="txt_hora_salida" placeholder="10:30:00">
             </div>
         </div>
-    </b-modal>
+    </b-modal> -->
 </template>
 
 <script lang="ts" setup>
@@ -83,6 +85,15 @@
 </script>
 
 <style scoped>
+
+.modal-header h1{
+    font-weight: 800;
+}
+
+.modal-body h5{
+    font-size: 18px;
+    font-weight: 600;
+}
 label{
     font-size: 14px;
     font-weight: 600;

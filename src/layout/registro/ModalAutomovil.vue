@@ -26,10 +26,16 @@
                                 <label for="txt_placas" class="form-label">Placas</label>
                                 <input type="text" class="form-control" id="txt_placas"  placeholder="122NS58" required>
                             </div>
+
+                            <div class="col-lg-12">
+                                <label for="txt_descripcion" class="form-label">Descripci&oacute;n</label>
+                                <textarea class="form-control" id="txt_descripcion" rows="3" placeholder="Caracter&iacute;sticas del autom&oacute;vil" required></textarea>
+                                <!-- <input type="text" class="form-control" id="txt_descripcion"  placeholder="Datos " required> -->
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
@@ -101,6 +107,10 @@ const props = defineProps({
 </script>
 
 <style scoped>
+.modal-header h1{
+    font-weight: 800;
+}
+
 label {
     font-size: 14px;
     font-weight: 600;

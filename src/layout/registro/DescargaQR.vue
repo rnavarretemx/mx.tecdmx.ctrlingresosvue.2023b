@@ -1,64 +1,43 @@
 <template>
-    <!-- <Header titulo_navbar="Datos del ingreso"></Header> -->
-    <!-- <Sidebar></Sidebar> -->
 
     <div class="container c_qr">
         <div class="subcontainer sc_qr">
             <div class="row">
                 <div class="col col-sm-12 col-md-12 col-lg-12 text-center titulo_uno">
-                    <h5>El registro de su visita se ha generado con la siguiente información.</h5>
+                    <h5>El registro de su visita se ha generado con la siguiente información</h5>
                 </div>
-                <!-- c&oacute;digo QR. -->
-                <div class="row col-lg-6 text-center img_qr">
+                <div class="row col-lg-12 text-center img_qr">
 
                     <div class="col col-sm-12 col-md-12 col-lg-12">
                         <img :src="ulr_img + data.datos_ingreso.codigo_qr" alt="">
-                        <h6>C&oacute;digo generado: <span>{{ data.datos_ingreso.codigo }}</span></h6>
+                        <h6> <strong>C&oacute;digo generado: </strong> <span> <br> <br>{{ data.datos_ingreso.codigo }}</span></h6>
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d_datos">
-                        <h6>Nombre del visitante</h6>
+                        <h6> <strong>Nombre del visitante </strong> </h6>
                         <h6 class="txt_dato">
                             {{ data.datos_visitante.nombre }}
                         </h6>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d_datos">
-                        <h6>Fecha y hora de la cita</h6>
+                        <h6> <strong>Fecha y hora de la cita</strong> </h6>
                         <h6 class="txt_dato">{{ data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada }}
                         </h6>
                     </div>
-                </div>
-
-                <div class="row  col-lg-6 text-center">
-
-                    <!-- <div class="col col-sm-6 col-md-6 col-lg-12 text-center">
-                        <h6>Nombre del visitante</h6>
-                        <h6 class="txt_dato">
-                            {{ data.datos_visitante.nombre }}
-                        </h6>
-                    </div>
-                    <div class="col col-sm-6 col-md-6 col-lg-12 text-center">
-                        <h6>Fecha y hora de la cita</h6>
-                        <h6 class="txt_dato">{{ data.datos_ingreso.fecha + " a las " + data.datos_ingreso.hora_agendada }}
-                        </h6>
-                    </div>-->
 
                     <div class="col col-sm-12 col-md-12 col-lg-12 text-center div_botones">
+                        <h5> ¿Necesitas registrar tu equipo de c&oacute;mputo o autom&oacute;vil?  </h5>
 
-                        <h6>¿Necesitas registrar tu equipo de c&oacute;mputo o autom&oacute;vil?</h6>
-                        <!-- <b-button variant="outline-secondary" v-b-modal.modal-equipo :sm="12" :md="12" :lg="5">
-                            REGISTRAR EQUIPO</b-button>
-
-                        <b-button variant="outline-secondary" v-b-modal.modal-automovil :sm="12" :md="12" :lg="5">
-                            REGISTRAR AUTOM&Oacute;VIL</b-button> -->
-
-                        <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                        <br>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                             <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3" data-bs-toggle="modal"
                             data-bs-target="#modal_equipo" type="button">REGISTRAR EQUIPO</button>
 
-                        <button class="btn btn-outline-secondary col-sm-12 col-md-12 col-lg-5" data-bs-toggle="modal"
+                        <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3" data-bs-toggle="modal"
                             data-bs-target="#modal_auto" type="button">REGISTRAR AUTOM&Oacute;VIL</button>
+                        </div>
 
-                        <button class="btn btn-outline-danger btn-lg col-lg-4" type="button"
+                        <button class="btn btn-outline-danger btn-lg col-12 col-sm-12 col-md-6 col-lg-4" type="button"
                             @click="descargarQR()">DESCARGAR COMPROBANTE</button>
                     </div>
 
@@ -79,13 +58,8 @@
 import ModalEquipo from './ModalEquipo.vue';
 import ModalAutomovil from './ModalAutomovil.vue';
 
-import { ref } from "vue";
-import router from '@/router';
-import { useRoute, useRouter } from "vue-router";
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import { PDFDocument} from 'pdf-lib'
 import download from 'downloadjs'
-
-/* var src_url = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/"; */
 
 const props = defineProps({
     data: Object
@@ -111,13 +85,13 @@ const descargarQR = async () => {
       size: 14 }) */
 
     page.drawImage(pngImage, {
-        x: page.getWidth() / 2 - pngDims.width / 2 ,
+        x: page.getWidth() / 2 - pngDims.width / 2,
         y: page.getHeight() / 2 - pngDims.height + 200,
         width: pngDims.width,
         height: pngDims.height,
     })
     const pdfBytes = await pdfDoc.save()
-    download(pdfBytes, (props.data.datos_ingreso.codigo+".pdf"), "application/pdf");
+    download(pdfBytes, (props.data.datos_ingreso.codigo + ".pdf"), "application/pdf");
 
 }
 
@@ -127,7 +101,7 @@ const descargarQR = async () => {
 .c_qr {
     padding: 50px;
     /* border: solid 1px red; */
-    height: 80vh;
+    /* height: 80vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +110,7 @@ const descargarQR = async () => {
 .sc_qr {
     border-radius: 20px;
     background: #EFEDED;
-    /* border: solid 1px blue; */
+    border: solid 3px #690061;
 }
 
 .titulo_uno {
@@ -145,36 +119,45 @@ const descargarQR = async () => {
     padding: 25px;
 }
 
-.titulo_uno h3 {
-    font-size: 30px;
+.titulo_uno h5 {
+    font-size: 20px;
     font-weight: 800;
 }
 
 .img_qr {
-    display: flex;
-    /* justify-content: center;
-    align-items: center; 
-    border: solid 2px blue;*/
+    /* display: flex; */
+    /* border: solid 2px #690061; */
 }
 
 .img_qr img {
     width: 15em;
-    margin: 15px;
+    margin: 25px;
+    border: solid 5px black;
+    border-radius: 10px;
 }
 
-.div_botones {
-    padding: 2em;
+.img_qr strong{
+    font-size: 12px;
+}
+
+.div_botones h5{
+    font-size: 16px !important;
+    font-weight: 800;
+   /* padding: 2em;  */
+    /* border: solid 1px red; */
+    padding: 10px;
 }
 
 .div_botones button {
     margin: 10px;
-    width: 100%;
+    /* width: 100%; */
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 .txt_dato {
-    font-weight: 400;
+    font-size: 16px !important;
+    font-weight: 500;
 }
 
 .d_datos {
