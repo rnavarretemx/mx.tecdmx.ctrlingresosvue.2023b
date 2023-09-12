@@ -102,7 +102,7 @@
                     <div class="col-lg-6 c_side">
                         <!-- Columna derecha -->
                         <div class="row">
-
+                            
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
 
                                 <!-- <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3"
