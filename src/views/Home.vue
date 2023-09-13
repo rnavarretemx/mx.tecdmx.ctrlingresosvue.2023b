@@ -3,7 +3,7 @@
 
         <div class="row r_login col-lg-12">
             <div class="subcontainer sc_login col-12 col-sm-12 col-md-12 col-lg-6">
-                <h2>Sistema de gestión de ingreso al TECDMX</h2>
+               <!--  <h2>Sistema de gestión de ingreso al TECDMX</h2> -->
             </div>
             <div class="subcontainer sc_login col-12 col-sm-12 col-md-12 col-lg-6">
                 <form class="d_form col-lg-8" @submit.prevent="onSubmit">
@@ -80,11 +80,11 @@ const onSubmit = async (e) => {
 
 /* Estilo del form login (Izquierdo). */
 .sc_login:nth-child(1) {
-    background: #eceff1 !important;
+    /* background: #eceff1 !important; */
     border-radius: 20px 0 0 20px;
     padding: 20px;
-    /* background-image: url("../assets/images/bg_cdmx.png");
-    background-size: cover; */
+    background-image: url("../assets/images/bg_cdmx.png");
+    background-size: cover;
 }
 
 .sc_login:nth-child(1) h2 {

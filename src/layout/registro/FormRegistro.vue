@@ -114,10 +114,11 @@ const onSubmit = async (e) => {
 
 .sc_form{
     margin: 40px;
-    background: #eceff1 ;
     padding: 20px;
+
+    /* background: #eceff1 ;
     border-radius: 20px;
-    border: solid 5px #690061;
+    border: solid 5px #690061; */
 }
 
 .sc_form .btn_guardar {
