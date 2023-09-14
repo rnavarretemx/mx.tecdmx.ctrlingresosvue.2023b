@@ -115,6 +115,8 @@ const onSubmit = async (e) => {
 .sc_form{
     margin: 40px;
     padding: 20px;
+
+    /* background: #eceff1 ;
     border-radius: 20px;
     /* background: #eceff1 ;
     border: solid 5px #690061; */

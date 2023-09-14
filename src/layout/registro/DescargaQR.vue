@@ -1,5 +1,4 @@
 <template>
-
     <div class="container c_qr">
         <div class="subcontainer sc_qr">
             <div class="row">
@@ -10,7 +9,8 @@
 
                     <div class="col col-sm-12 col-md-12 col-lg-12">
                         <img :src="ulr_img + data.datos_ingreso.codigo_qr" alt="">
-                        <h6> <strong>C&oacute;digo generado: </strong> <span> <br> <br>{{ data.datos_ingreso.codigo }}</span></h6>
+                        <h6> <strong>C&oacute;digo generado: </strong> <span> <br> <br>{{ data.datos_ingreso.codigo
+                        }}</span></h6>
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d_datos">
@@ -26,15 +26,17 @@
                     </div>
 
                     <div class="col col-sm-12 col-md-12 col-lg-12 text-center div_botones">
-                        <h5> ¿Necesitas registrar tu equipo de c&oacute;mputo o autom&oacute;vil?  </h5>
+                        <h5> ¿Necesitas registrar tu equipo de c&oacute;mputo o autom&oacute;vil? </h5>
 
                         <br>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                             <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3" data-bs-toggle="modal"
-                            data-bs-target="#modal_equipo" type="button">REGISTRAR EQUIPO</button>
+                            <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3"
+                                data-bs-toggle="modal" data-bs-target="#modal_equipo" type="button">REGISTRAR
+                                EQUIPO</button>
 
-                        <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3" data-bs-toggle="modal"
-                            data-bs-target="#modal_auto" type="button">REGISTRAR AUTOM&Oacute;VIL</button>
+                            <button class="btn btn-outline-secondary col-12 col-sm-12 col-md-6 col-lg-3"
+                                data-bs-toggle="modal" data-bs-target="#modal_auto" type="button">REGISTRAR
+                                AUTOM&Oacute;VIL</button>
                         </div>
 
                         <button class="btn btn-outline-danger btn-lg col-12 col-sm-12 col-md-6 col-lg-4" type="button"
@@ -58,7 +60,7 @@
 import ModalEquipo from './ModalEquipo.vue';
 import ModalAutomovil from './ModalAutomovil.vue';
 
-import { PDFDocument} from 'pdf-lib'
+import { PDFDocument } from 'pdf-lib'
 import download from 'downloadjs'
 
 const props = defineProps({
@@ -72,9 +74,19 @@ const ulr_img = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/imag
 
 const descargarQR = async () => {
 
+    const bgpdfUrl = '../../assets/cita_tecdmx.pdf';
+    const bgPdfBytes = await fetch(bgpdfUrl).then((res) => res.arrayBuffer());
+
+
     const pngUrl = ulr_img + props.data.datos_ingreso.codigo_qr;
     const pngImageBytes = await fetch(pngUrl).then((res) => res.arrayBuffer())
+
+
     const pdfDoc = await PDFDocument.create()
+
+    const [pdf_tecdmx] = await pdfDoc.embedPdf(bgPdfBytes);
+    const pdfDims = pdf_tecdmx.scale(0.3);
+
     const pngImage = await pdfDoc.embedPng(pngImageBytes)
     const pngDims = pngImage.scale(0.8)
 
@@ -83,6 +95,12 @@ const descargarQR = async () => {
     { x: 50, 
       y: 200, 
       size: 14 }) */
+
+    page.drawPage(pdf_tecdmx, {
+        ...pdfDims,
+        x: page.getWidth() / 2 - pdfDims.width / 2,
+        y: page.getHeight() - pdfDims.height - 150,
+    });
 
     page.drawImage(pngImage, {
         x: page.getWidth() / 2 - pngDims.width / 2,
@@ -136,14 +154,14 @@ const descargarQR = async () => {
     border-radius: 10px;
 }
 
-.img_qr strong{
+.img_qr strong {
     font-size: 12px;
 }
 
-.div_botones h5{
+.div_botones h5 {
     font-size: 16px !important;
     font-weight: 800;
-   /* padding: 2em;  */
+    /* padding: 2em;  */
     /* border: solid 1px red; */
     padding: 10px;
 }
