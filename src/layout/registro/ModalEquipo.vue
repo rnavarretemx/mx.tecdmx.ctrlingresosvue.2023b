@@ -70,6 +70,7 @@ const onSubmit = async () => {
     var c_marca = document.getElementById("txt_marca");
     var c_modelo = document.getElementById("txt_modelo");
     var c_noserie = document.getElementById("txt_noserie");
+    var c_descripcion = document.getElementById("txt_descripcion");
     var cod_ingreso = props.data.datos_ingreso.codigo;
 
     try {
@@ -78,6 +79,8 @@ const onSubmit = async () => {
         formData.append('modelo', c_modelo.value);
         formData.append('no_serie', c_noserie.value);
         formData.append('cod_ingreso', cod_ingreso);
+        formData.append('descripcion', c_descripcion.value);
+
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/guardar_equipo', formData);
         registro.value = data;
         console.log(JSON.stringify(data));

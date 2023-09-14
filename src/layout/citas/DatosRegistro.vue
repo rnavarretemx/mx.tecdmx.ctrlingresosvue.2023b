@@ -84,7 +84,7 @@
 
                                                         </h5>
                                                         <p class="card-text">
-                                                            <!-- {{equipo.descripcion}} -->
+                                                            {{equipo.descripcion}}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -119,7 +119,7 @@
 
                                                         </h5>
                                                         <p class="card-text">
-                                                            <!-- {{equipo.descripcion}} -->
+                                                            {{auto.descripcion}}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -214,10 +214,15 @@
         </div>
 
     </div>
+
+    <ModalEquipo :data="data"></ModalEquipo>
+    <ModalAutomovil :data="data"></ModalAutomovil>
 </template>
     
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
+import ModalEquipo from '../registro/ModalEquipo.vue';
+import ModalAutomovil from '../registro/ModalAutomovil.vue';
 
 const ulr_img = "http://localhost/mx.tecdmx.ctrlingresosapi.2023b/resources/images/";
 

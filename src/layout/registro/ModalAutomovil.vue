@@ -72,6 +72,7 @@ const onSubmit = async () => {
     var c_marca = document.getElementById("txt_marca_auto");
     var c_color = document.getElementById("txt_color");
     var c_placas = document.getElementById("txt_placas");
+    var c_descripcion = document.getElementById("txt_descripcion");
     var cod_ingreso = props.data.datos_ingreso.codigo;
     console.log(c_marca.value);
     console.log(c_color.value);
@@ -85,9 +86,9 @@ const onSubmit = async () => {
         formData.append('color', c_color.value);
         formData.append('placas', c_placas.value);
         formData.append('cod_ingreso', cod_ingreso);
+        formData.append('descripcion', c_descripcion.value);
         const { data } = await axios.post('http://127.0.0.1:8000/api/ingresos/guardar_auto', formData);
         console.log(JSON.stringify(data));
-
 
         if (data.status == "success") {
             alert("Se registró el vehículo para la visita: " + data.datos_visitante.nombre);
